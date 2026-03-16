@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<!--
+  Horizon Europe April 2026 — Call Intelligence Dashboard
+  Prepared by Kristjan Zemljič | Global Disruption
+  https://www.global-disruption.com
+  EU Grant Engineer · AI-Augmented Grant Consulting
+-->
+<meta name="generator" content="Global Disruption · AI-Augmented Call Intelligence">
+<meta name="author" content="Kristjan Zemljič, Global Disruption">
+<meta property="og:title" content="Horizon Europe April 2026 — Call Intelligence Dashboard">
+<meta property="og:description" content="~100 topics, €1.5B+ in funding across 5 clusters. Prepared by Global Disruption — EU Grant Engineering.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Horizon Europe April 2026 — Call Intelligence Dashboard | Global Disruption</title>
+<meta name="description" content="Complete intelligence dashboard for Horizon Europe April 2026 deadlines. ~100 topics, €1.5B+ in funding across 5 clusters. Prepared by Global Disruption — EU Grant Engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+/* ========== DESIGN TOKENS ========== */
+:root {
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem; --space-20: 5rem; --space-24: 6rem;
+
+  --radius-sm: 0.375rem; --radius-md: 0.5rem;
+  --radius-lg: 0.75rem; --radius-xl: 1rem;
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+/* DARK THEME (default) */
+[data-theme="dark"] {
+  --color-bg: #0d1117;
+  --color-surface: #141b24;
+  --color-surface-2: #1a2332;
+  --color-surface-offset: #111820;
+  --color-border: #2a3544;
+  --color-divider: #1e2a38;
+  --color-text: #e2e8f0;
+  --color-text-muted: #8b99ad;
+  --color-text-faint: #4a5568;
+  --color-text-inverse: #0d1117;
+  --color-primary: #01969e;
+  --color-primary-hover: #01b0ba;
+  --color-primary-active: #01696f;
+  --color-primary-dim: rgba(1, 150, 158, 0.15);
+  --color-accent-terra: #c17a50;
+  --color-accent-olive: #7a9a5a;
+  --color-accent-blue: #5591c7;
+  --color-accent-purple: #a86fdf;
+  --color-accent-gold: #e8af34;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* LIGHT THEME */
+[data-theme="light"] {
+  --color-bg: #f0f2f5;
+  --color-surface: #ffffff;
+  --color-surface-2: #f8f9fb;
+  --color-surface-offset: #e8ecf1;
+  --color-border: #d1d9e0;
+  --color-divider: #e2e8f0;
+  --color-text: #1a202c;
+  --color-text-muted: #64748b;
+  --color-text-faint: #a0aec0;
+  --color-text-inverse: #ffffff;
+  --color-primary: #01696f;
+  --color-primary-hover: #01565b;
+  --color-primary-active: #014347;
+  --color-primary-dim: rgba(1, 105, 111, 0.1);
+  --color-accent-terra: #964219;
+  --color-accent-olive: #5a7a3a;
+  --color-accent-blue: #006494;
+  --color-accent-purple: #7a39bb;
+  --color-accent-gold: #d19900;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+/* ========== BASE RESET ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+button { cursor: pointer; background: none; border: none; }
+table { border-collapse: collapse; width: 100%; }
+a { color: var(--color-primary); text-decoration: none; transition: color var(--transition-interactive); }
+a:hover { color: var(--color-primary-hover); }
+::selection { background: rgba(1,150,158,0.25); color: var(--color-text); }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0; }
+
+/* ========== LAYOUT ========== */
+.container { max-width: var(--content-wide); margin: 0 auto; padding: 0 var(--space-6); }
+.container-narrow { max-width: var(--content-default); margin: 0 auto; padding: 0 var(--space-6); }
+.section { padding: clamp(var(--space-12), 6vw, var(--space-24)) 0; }
+.section-header { margin-bottom: var(--space-10); }
+.section-header h2 { font-family: var(--font-display); font-size: var(--text-2xl); color: var(--color-text); margin-bottom: var(--space-2); }
+.section-header p { color: var(--color-text-muted); font-size: var(--text-base); max-width: 60ch; }
+.section-divider { border: none; border-top: 1px solid var(--color-divider); margin: 0; }
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,17,23,0.85);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-divider);
+  transition: background var(--transition-interactive);
+}
+[data-theme="light"] .nav { background: rgba(240,242,245,0.85); }
+.nav-inner {
+  max-width: var(--content-wide); margin: 0 auto;
+  padding: var(--space-3) var(--space-6);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-brand { display: flex; align-items: center; gap: var(--space-3); }
+.nav-brand svg { width: 32px; height: 32px; }
+.nav-brand span { font-weight: 700; font-size: var(--text-sm); letter-spacing: -0.02em; color: var(--color-text); }
+.nav-links { display: flex; gap: var(--space-6); align-items: center; }
+.nav-links a {
+  font-size: var(--text-sm); font-weight: 500; color: var(--color-text-muted);
+  transition: color var(--transition-interactive);
+}
+.nav-links a:hover { color: var(--color-primary); }
+.theme-toggle {
+  width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-md); color: var(--color-text-muted);
+  transition: all var(--transition-interactive);
+}
+.theme-toggle:hover { color: var(--color-text); background: var(--color-primary-dim); }
+
+/* Mobile nav */
+.nav-mobile-toggle { display: none; width: 36px; height: 36px; align-items: center; justify-content: center; color: var(--color-text-muted); }
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: var(--space-4) var(--space-6); gap: var(--space-4); }
+  .nav-links.open { display: flex; }
+  .nav-mobile-toggle { display: flex; }
+}
+
+/* ========== HERO ========== */
+.hero {
+  padding-top: calc(80px + clamp(var(--space-16), 8vw, var(--space-24)));
+  padding-bottom: clamp(var(--space-12), 6vw, var(--space-20));
+  position: relative; overflow: hidden;
+  background: linear-gradient(165deg, var(--color-bg) 0%, var(--color-surface) 40%, var(--color-bg) 100%);
+}
+.hero::before {
+  content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 200%;
+  background: radial-gradient(ellipse, rgba(1,150,158,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-1) var(--space-4); border-radius: var(--radius-xl);
+  background: var(--color-primary-dim); color: var(--color-primary);
+  font-size: var(--text-xs); font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: var(--space-6);
+}
+.hero-badge .pulse {
+  width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.hero h1 {
+  font-family: var(--font-display); font-size: var(--text-3xl);
+  line-height: 1.05; margin-bottom: var(--space-6);
+  background: linear-gradient(135deg, var(--color-text) 0%, var(--color-text-muted) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero h1 em { font-style: normal; -webkit-text-fill-color: var(--color-primary); color: var(--color-primary); }
+.hero-subtitle {
+  font-size: var(--text-lg); color: var(--color-text-muted);
+  margin-bottom: var(--space-8); max-width: 55ch; font-weight: 400;
+}
+.hero-stats {
+  display: flex; flex-wrap: wrap; gap: var(--space-6);
+  padding-top: var(--space-6); border-top: 1px solid var(--color-divider);
+}
+.hero-stat { display: flex; flex-direction: column; gap: var(--space-1); }
+.hero-stat-value { font-size: var(--text-xl); font-weight: 800; font-variant-numeric: tabular-nums lining-nums; color: var(--color-primary); }
+.hero-stat-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
+
+/* Countdown */
+.countdown-section { margin-top: var(--space-10); }
+.countdown-label { font-size: var(--text-sm); color: var(--color-text-muted); margin-bottom: var(--space-3); font-weight: 500; }
+.countdown {
+  display: flex; gap: var(--space-4); flex-wrap: wrap;
+}
+.countdown-unit {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--color-surface-2); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-6);
+  min-width: 80px;
+}
+.countdown-unit .num {
+  font-size: var(--text-xl); font-weight: 800; font-variant-numeric: tabular-nums;
+  color: var(--color-primary); line-height: 1;
+}
+.countdown-unit .lbl { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: var(--space-1); }
+.hero-intro {
+  margin-top: var(--space-8); font-size: var(--text-base); color: var(--color-text-muted);
+  max-width: 65ch; line-height: 1.7;
+}
+
+/* ========== KPI CARDS ========== */
+.kpi-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4);
+}
+@media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .kpi-grid { grid-template-columns: 1fr; } }
+.kpi-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  position: relative; overflow: hidden;
+  transition: all var(--transition-interactive);
+}
+.kpi-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--color-primary);
+}
+.kpi-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.kpi-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
+.kpi-value { font-size: var(--text-xl); font-weight: 800; font-variant-numeric: tabular-nums lining-nums; color: var(--color-text); }
+.kpi-sub { font-size: var(--text-xs); color: var(--color-text-faint); margin-top: var(--space-1); }
+
+/* ========== CHARTS ========== */
+.charts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-8); }
+@media (max-width: 900px) { .charts-grid { grid-template-columns: 1fr; } }
+.chart-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+}
+.chart-card h3 { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-4); text-transform: uppercase; letter-spacing: 0.04em; }
+.chart-container { position: relative; width: 100%; aspect-ratio: 1; max-height: 280px; }
+.chart-container-bar { position: relative; width: 100%; height: 280px; }
+
+/* ========== CLUSTER EXPLORER ========== */
+.cluster-tabs {
+  display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-6);
+  border-bottom: 2px solid var(--color-divider); padding-bottom: var(--space-2);
+}
+.cluster-tab {
+  padding: var(--space-2) var(--space-4); border-radius: var(--radius-md) var(--radius-md) 0 0;
+  font-size: var(--text-sm); font-weight: 600; color: var(--color-text-muted);
+  transition: all var(--transition-interactive); border: none; background: none;
+  position: relative;
+}
+.cluster-tab:hover { color: var(--color-text); background: var(--color-primary-dim); }
+.cluster-tab.active {
+  color: var(--color-primary); background: var(--color-primary-dim);
+}
+.cluster-tab.active::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 2px;
+  background: var(--color-primary);
+}
+.cluster-panel { display: none; }
+.cluster-panel.active { display: block; }
+.cluster-meta {
+  display: flex; flex-wrap: wrap; gap: var(--space-6); margin-bottom: var(--space-6);
+  padding: var(--space-5); background: var(--color-surface-2); border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+.cluster-meta-item { display: flex; flex-direction: column; gap: var(--space-1); }
+.cluster-meta-item .label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+.cluster-meta-item .value { font-size: var(--text-lg); font-weight: 700; color: var(--color-text); }
+
+/* Sub-group headers */
+.sub-group { margin-bottom: var(--space-8); }
+.sub-group-header {
+  display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2); border-bottom: 1px solid var(--color-divider);
+}
+.sub-group-header h4 { font-size: var(--text-base); font-weight: 700; color: var(--color-text); }
+.sub-group-header .badge {
+  font-size: var(--text-xs); padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-xl); font-weight: 600;
+}
+
+/* Topic table */
+.topics-table { width: 100%; border-collapse: separate; border-spacing: 0; }
+.topics-table thead th {
+  font-size: var(--text-xs); font-weight: 700; color: var(--color-text-muted);
+  text-transform: uppercase; letter-spacing: 0.06em; padding: var(--space-3) var(--space-4);
+  text-align: left; background: var(--color-surface-2); position: sticky; top: 0; z-index: 5;
+  border-bottom: 2px solid var(--color-border);
+}
+.topics-table thead th:first-child { border-radius: var(--radius-md) 0 0 0; }
+.topics-table thead th:last-child { border-radius: 0 var(--radius-md) 0 0; }
+.topics-table tbody td {
+  font-size: var(--text-sm); padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-divider);
+  vertical-align: top; color: var(--color-text);
+}
+.topics-table tbody tr { transition: background var(--transition-interactive); }
+.topics-table tbody tr:hover { background: var(--color-primary-dim); }
+.topic-id { font-family: 'Inter', monospace; font-size: var(--text-xs); color: var(--color-text-muted); font-weight: 500; white-space: nowrap; }
+.topic-title { font-weight: 500; color: var(--color-text); line-height: 1.4; }
+
+/* Action type badges */
+.type-badge {
+  display: inline-block; font-size: var(--text-xs); font-weight: 700;
+  padding: 2px 10px; border-radius: var(--radius-xl); white-space: nowrap;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.type-RIA { background: rgba(1,150,158,0.15); color: var(--color-primary); }
+.type-IA { background: rgba(193,122,80,0.15); color: var(--color-accent-terra); }
+.type-CSA { background: rgba(122,154,90,0.15); color: var(--color-accent-olive); }
+.type-PPI { background: rgba(85,145,199,0.15); color: var(--color-accent-blue); }
+.type-CoFund { background: rgba(168,111,223,0.15); color: var(--color-accent-purple); }
+.type-MSCA-SE { background: rgba(232,175,52,0.15); color: var(--color-accent-gold); }
+.type-Prize { background: rgba(232,175,52,0.15); color: var(--color-accent-gold); }
+.type-default { background: rgba(139,153,173,0.15); color: var(--color-text-muted); }
+
+/* Two-stage badge */
+.stage-badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 1px 8px; border-radius: var(--radius-xl);
+  background: rgba(232,175,52,0.15); color: var(--color-accent-gold);
+  text-transform: uppercase; letter-spacing: 0.04em; margin-left: var(--space-2);
+}
+
+/* ========== ACTION PLAN ========== */
+.timeline { position: relative; padding-left: var(--space-10); }
+.timeline::before {
+  content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-active));
+}
+.timeline-item { position: relative; margin-bottom: var(--space-8); }
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: calc(-1 * var(--space-10) + 8px); top: 4px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--color-primary); border: 3px solid var(--color-bg);
+  z-index: 2;
+}
+.timeline-item h4 { font-size: var(--text-base); font-weight: 700; color: var(--color-primary); margin-bottom: var(--space-1); }
+.timeline-date { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-3); font-weight: 500; }
+.timeline-tasks { list-style: none; display: flex; flex-direction: column; gap: var(--space-2); }
+.timeline-tasks li {
+  font-size: var(--text-sm); color: var(--color-text-muted); padding-left: var(--space-6);
+  position: relative; line-height: 1.5;
+}
+.timeline-tasks li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-primary-dim); border: 1.5px solid var(--color-primary);
+}
+
+/* ========== TIPS ========== */
+.tips-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+@media (max-width: 900px) { .tips-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .tips-grid { grid-template-columns: 1fr; } }
+.tip-card {
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-6);
+  transition: all var(--transition-interactive);
+}
+.tip-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tip-icon { font-size: 1.5rem; margin-bottom: var(--space-3); }
+.tip-card h3 { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+.tip-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+
+/* ========== LINKS ========== */
+.links-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+@media (max-width: 600px) { .links-grid { grid-template-columns: 1fr; } }
+.link-card {
+  display: flex; align-items: center; gap: var(--space-4);
+  background: var(--color-surface); border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg); padding: var(--space-5) var(--space-6);
+  text-decoration: none; transition: all var(--transition-interactive);
+}
+.link-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.link-card .link-icon {
+  width: 40px; height: 40px; border-radius: var(--radius-md);
+  background: var(--color-primary-dim); display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary); flex-shrink: 0;
+}
+.link-card .link-text h3 { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+.link-card .link-text p { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
+
+/* ========== FOOTER ========== */
+.footer {
+  border-top: 1px solid var(--color-divider);
+  padding: var(--space-10) 0;
+  text-align: center;
+}
+.footer p { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-2); }
+.footer a { color: var(--color-primary); }
+
+/* ========== SCROLL ANIMATION ========== */
+.fade-in {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* ========== RESPONSIVE TABLE WRAPPER ========== */
+.table-wrapper { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+.table-wrapper .topics-table thead th:first-child,
+.table-wrapper .topics-table thead th:last-child { border-radius: 0; }
+
+/* ========== LEGEND ========== */
+.chart-legend {
+  display: flex; flex-wrap: wrap; gap: var(--space-3); margin-top: var(--space-4);
+  justify-content: center;
+}
+.chart-legend-item {
+  display: flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-xs); color: var(--color-text-muted);
+}
+.chart-legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* Deadline tag */
+.deadline-tag {
+  font-size: var(--text-xs); font-weight: 600;
+  white-space: nowrap; color: var(--color-text-muted);
+}
+
+/* CTA button */
+.cta-btn {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-primary); color: #fff;
+  border-radius: var(--radius-lg); font-weight: 600; font-size: var(--text-sm);
+  transition: all var(--transition-interactive); text-decoration: none;
+}
+.cta-btn:hover { background: var(--color-primary-hover); color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+
+/* Scroll to top */
+.scroll-top {
+  position: fixed; bottom: var(--space-6); right: var(--space-6);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--color-primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: all var(--transition-interactive);
+  z-index: 50;
+}
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<!-- ========== NAVIGATION ========== -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Horizon Europe Dashboard Logo">
+        <rect x="2" y="2" width="28" height="28" rx="6" stroke="currentColor" stroke-width="2" fill="none" style="color: var(--color-primary);"/>
+        <circle cx="16" cy="16" r="4" fill="var(--color-primary)"/>
+        <path d="M16 6v6M16 20v6M6 16h6M20 16h6" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M9.5 9.5l4.25 4.25M18.25 18.25l4.25 4.25M9.5 22.5l4.25-4.25M18.25 13.75l4.25-4.25" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+      </svg>
+      <span>HE April 2026</span>
+    </div>
+    <button class="nav-mobile-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+    </button>
+    <div class="nav-links">
+      <a href="#overview">Overview</a>
+      <a href="#explorer">Call Explorer</a>
+      <a href="#action-plan">Action Plan</a>
+      <a href="#tips">Tips</a>
+      <a href="#links">Links</a>
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="pulse"></span>
+        Live Call Intelligence
+      </div>
+      <h1>Horizon Europe April 2026:<br><em>Your Complete Call Intelligence</em></h1>
+      <p class="hero-subtitle">~100 topics &middot; €1.5B+ in funding &middot; Deadlines: 14–21 April 2026</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="107">0</span>
+          <span class="hero-stat-label">Topics</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">€1.5B+</span>
+          <span class="hero-stat-label">Total Funding</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value" data-count="5">0</span>
+          <span class="hero-stat-label">Clusters</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-value">14–21 Apr</span>
+          <span class="hero-stat-label">Date Range</span>
+        </div>
+      </div>
+      <div class="countdown-section">
+        <div class="countdown-label">Countdown to earliest deadline — 14 April 2026, 17:00 CEST</div>
+        <div class="countdown" id="countdown">
+          <div class="countdown-unit"><span class="num" id="cd-days">--</span><span class="lbl">Days</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-hours">--</span><span class="lbl">Hours</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-mins">--</span><span class="lbl">Min</span></div>
+          <div class="countdown-unit"><span class="num" id="cd-secs">--</span><span class="lbl">Sec</span></div>
+        </div>
+      </div>
+      <p class="hero-intro">With the deadline wave fast approaching, here's everything you need to know about the biggest cluster of Horizon Europe deadlines in spring 2026. This dashboard covers all open calls across Health, Digital &amp; Industry, Climate &amp; Mobility, Food &amp; Bioeconomy, and MSCA.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OVERVIEW DASHBOARD ========== -->
+<section class="section" id="overview">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Overview Dashboard</h2>
+      <p>Key metrics and visual breakdowns of the April 2026 call wave</p>
+    </div>
+    <div class="kpi-grid fade-in">
+      <div class="kpi-card">
+        <div class="kpi-label">Total Topics</div>
+        <div class="kpi-value" data-count="107">0</div>
+        <div class="kpi-sub">Across all clusters</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Identifiable Budget</div>
+        <div class="kpi-value">€1.5B+</div>
+        <div class="kpi-sub">CL4 alone: €654M</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Programme Areas</div>
+        <div class="kpi-value" data-count="5">0</div>
+        <div class="kpi-sub">CL1, CL4, CL5, CL6, MSCA</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Deadline Range</div>
+        <div class="kpi-value">14–21 Apr</div>
+        <div class="kpi-sub">4 deadline dates</div>
+      </div>
+    </div>
+
+    <div class="charts-grid fade-in">
+      <div class="chart-card">
+        <h3>Topics by Cluster</h3>
+        <div class="chart-container"><canvas id="clusterChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Topics by Action Type</h3>
+        <div class="chart-container"><canvas id="actionChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <h3>Topics by Deadline</h3>
+        <div class="chart-container-bar"><canvas id="deadlineChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== CLUSTER EXPLORER ========== -->
+<section class="section" id="explorer">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Cluster-by-Cluster Call Explorer</h2>
+      <p>Browse every topic with full details — action types are color-coded for quick scanning</p>
+    </div>
+
+    <div class="fade-in">
+      <div class="cluster-tabs" role="tablist">
+        <button class="cluster-tab active" role="tab" aria-selected="true" data-cluster="cl1">CL1 Health (24)</button>
+        <button class="cluster-tab" role="tab" aria-selected="false" data-cluster="cl4">CL4 Digital/Industry (35)</button>
+        <button class="cluster-tab" role="tab" aria-selected="false" data-cluster="cl5">CL5 Climate/Mobility (14)</button>
+        <button class="cluster-tab" role="tab" aria-selected="false" data-cluster="cl6">CL6 Food/Bio (35)</button>
+        <button class="cluster-tab" role="tab" aria-selected="false" data-cluster="msca">MSCA (1)</button>
+      </div>
+
+      <!-- CL1 HEALTH -->
+      <div class="cluster-panel active" id="panel-cl1">
+        <div class="cluster-meta">
+          <div class="cluster-meta-item"><span class="label">Cluster</span><span class="value">Cluster 1: Health</span></div>
+          <div class="cluster-meta-item"><span class="label">Topics</span><span class="value">24</span></div>
+          <div class="cluster-meta-item"><span class="label">Deadline</span><span class="value">15–16 Apr 2026</span></div>
+          <div class="cluster-meta-item"><span class="label">Budget</span><span class="value">€90M+ (est.)</span></div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Single-Stage Topics</h4>
+            <span class="badge type-badge type-RIA">19 topics</span>
+            <span class="deadline-tag">Deadline: 16 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-02</td><td class="topic-title">Innovative interventions to prevent the harmful effects of digital technologies on children's mental health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-03</td><td class="topic-title">Advancing research on prevention, diagnosis, and management of post-infection long-term conditions</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-04</td><td class="topic-title">Development of novel vaccines for viral pathogens with epidemic potential</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-09</td><td class="topic-title">Multisectoral approach to tackle chronic non-communicable diseases: implementation research</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-11</td><td class="topic-title">Sex/gender-specific mechanisms of cardiovascular diseases: determinants, risk factors and pathways</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-15</td><td class="topic-title">Scaling up innovation in cardiovascular health</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-01</td><td class="topic-title">Towards a better understanding and anticipation of climate change impacts on health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-04</td><td class="topic-title">Towards climate resilient, prepared and carbon neutral populations and healthcare systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-05</td><td class="topic-title">Support for a multilateral initiative on climate change and health research</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-STAYHLTH-02</td><td class="topic-title">Behavioural interventions as primary prevention for NCDs among young people</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-STAYHLTH-03</td><td class="topic-title">Building public trust and outreach in the life sciences</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-03</td><td class="topic-title">Integrating New Approach Methodologies (NAMs) to advance biomedical research and regulatory testing</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-05</td><td class="topic-title">Pilot actions for follow-on funding: Leveraging EU-funded collaborative research in regenerative medicine</td><td><span class="type-badge type-IA">IA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-06</td><td class="topic-title">Support to ERA action on accelerating NAMs to reduce and replace animal testing</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-07</td><td class="topic-title">Establishing a European network of Centres of Excellence for ATMPs</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-IND-03</td><td class="topic-title">Regulatory science to support translational development of patient-centred health technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-CARE-01</td><td class="topic-title">Public procurement of innovative solutions for improving citizens' access to healthcare</td><td><span class="type-badge type-PPI">PPI</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-01-CARE-03</td><td class="topic-title">Identifying and addressing low-value care in health and care systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2026-04-CARE-04</td><td class="topic-title">Enhancing and enlarging the European Partnership on Personalised Medicine (EP PerMEd) (Top-up)</td><td><span class="type-badge type-CoFund">CoFund</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Two-Stage Topics (Stage 2)</h4>
+            <span class="badge type-badge type-RIA">5 topics</span>
+            <span class="stage-badge">Stage 2</span>
+            <span class="deadline-tag">Deadline: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-HLTH-2025-03-DISEASE-02-two-stage</td><td class="topic-title">Advancing innovative interventions for mental, behavioural and neurodevelopmental disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2025-03-STAYHLTH-01-two-stage</td><td class="topic-title">Improving the quality of life of persons with intellectual disabilities and their families</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2025-03-ENVHLTH-01-two-stage</td><td class="topic-title">The impact of pollution on the development and progression of brain diseases and disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2025-03-ENVHLTH-02-two-stage</td><td class="topic-title">Advancing knowledge on the impacts of micro- and nanoplastics on human health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id">HORIZON-HLTH-2025-03-IND-03-two-stage</td><td class="topic-title">Facilitating multinational clinical studies of orphan/highly innovative medical devices</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CL4 DIGITAL/INDUSTRY -->
+      <div class="cluster-panel" id="panel-cl4">
+        <div class="cluster-meta">
+          <div class="cluster-meta-item"><span class="label">Cluster</span><span class="value">Cluster 4: Digital, Industry & Space</span></div>
+          <div class="cluster-meta-item"><span class="label">Topics</span><span class="value">35</span></div>
+          <div class="cluster-meta-item"><span class="label">Deadlines</span><span class="value">15 & 21 Apr 2026</span></div>
+          <div class="cluster-meta-item"><span class="label">Budget</span><span class="value">€654.1M</span></div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Industry Pillar — Materials & Production (Call 01)</h4>
+            <span class="badge type-badge type-IA">€319M · 15 topics</span>
+            <span class="deadline-tag">Deadline: 21 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-23</td><td class="topic-title">Accelerating discovery of chemicals and innovative advanced materials through digitalisation and AI</td><td><span class="type-badge type-IA">IA</span></td><td>€13m</td><td>up to 4</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-24</td><td class="topic-title">Cooperation on innovative advanced materials with Japan</td><td><span class="type-badge type-CSA">CSA</span></td><td>€800k</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-01</td><td class="topic-title">Advanced manufacturing for key products (Made in Europe)</td><td><span class="type-badge type-IA">IA</span></td><td>€6-8m</td><td>up to 6</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-04</td><td class="topic-title">Optimise resource usage in a circular economy (Processes4Planet + Clean Steel)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-8m</td><td>up to 9</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-05</td><td class="topic-title">Circular innovative advanced materials: from design to markets</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-6.5m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-31</td><td class="topic-title">Efficient CO2 capture/purification/utilisation for competitive products</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-41</td><td class="topic-title">Enhancing industry-academia knowledge exchange in SSH</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-44</td><td class="topic-title">Attracting management talent for Technology Infrastructures staff</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-45</td><td class="topic-title">Pilot access to Technology Infrastructures for startups/SMEs</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1.5-2.5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-46</td><td class="topic-title">Mapping and service finder for Technology Infrastructures</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-48</td><td class="topic-title">Proof of market: valorisation of Horizon R&I results</td><td><span class="type-badge type-IA">IA</span></td><td>€200k</td><td>up to 25</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-11</td><td class="topic-title">Innovative technologies for raw materials exploration and data modelling</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-12</td><td class="topic-title">Technologies for innovative extraction of critical raw materials</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-13</td><td class="topic-title">Monitoring of secondary raw materials</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-14</td><td class="topic-title">Improving availability of secondary raw materials through recycling</td><td><span class="type-badge type-IA">IA</span></td><td>€7.5m</td><td>up to 4</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Digital Pillar — Call 04</h4>
+            <span class="badge type-badge type-RIA">€221.8M · 15 topics</span>
+            <span class="deadline-tag">Deadline: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-02</td><td class="topic-title">Open Internet Stack Sovereign Solutions</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7-10.25m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-03</td><td class="topic-title">Open Internet Stack Support for Scale</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-06</td><td class="topic-title">Efficient and compliant access to and use of data (AI/Data/Robotics)</td><td><span class="type-badge type-IA">IA</span></td><td>€11.5-23.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-01</td><td class="topic-title">Apply AI: Pilot of RAISE 'Science for AI' Pillar</td><td><span class="type-badge type-RIA">RIA</span></td><td>€17m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-19</td><td class="topic-title">Challenge-Driven GenAI4EU Booster in Apply AI sectors</td><td><span class="type-badge type-RIA">RIA</span></td><td>€15m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-08</td><td class="topic-title">Apply AI: Robotics for Manufacturing - Core Skills via Technical Challenges</td><td><span class="type-badge type-RIA">RIA</span></td><td>€18m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-09</td><td class="topic-title">Advanced Local Digital Twins using AI for Early Warning and Preparedness</td><td><span class="type-badge type-IA">IA</span></td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-11</td><td class="topic-title">Grand Challenge on Quantum Sensors for Inertial Navigation</td><td><span class="type-badge type-Prize">Prize</span></td><td>€0.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-12</td><td class="topic-title">Standards for Quantum Technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-18</td><td class="topic-title">Large-Scale Photonic Quantum Computing Platform Technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td>€10m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-14</td><td class="topic-title">Networking and Future Photonics Strategy (Photonics Partnership)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-15</td><td class="topic-title">Strengthening cooperation of semiconductor-intensive EU regions</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-17</td><td class="topic-title">Fostering 2D Materials-based emerging technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-HUMAN-01</td><td class="topic-title">Core technologies for Virtual Worlds and Web 4.0 (Virtual Worlds Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€4-5m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-04-HUMAN-02</td><td class="topic-title">Web 4.0 architectural framework and Open Internet Stack for virtual worlds</td><td><span class="type-badge type-RIA">RIA</span></td><td>€2.8-8.4m</td><td>up to 3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Digital Pillar — Call 05</h4>
+            <span class="badge type-badge type-RIA">€85.5M · 3 topics</span>
+            <span class="deadline-tag">Deadline: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL4-2026-05-MAT-PROD-25</td><td class="topic-title">New/enhanced Innovative Advanced Materials for sensing</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-05-DIGITAL-EMERGING-02</td><td class="topic-title">Next-Generation AI Agents for Real-World Applications (AI/Data/Robotics)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€19m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL4-2026-05-DIGITAL-EMERGING-03</td><td class="topic-title">Next-Generation Agile and Intelligent Robotics Platforms for Industrial/Service Applications</td><td><span class="type-badge type-RIA">RIA</span></td><td>€12-13m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>RAISE — AI in Science</h4>
+            <span class="badge type-badge type-RIA">€27.8M · 2 topics</span>
+            <span class="deadline-tag">Deadline: 21 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-RAISE-2026-01-01</td><td class="topic-title">Thematic Networks of Excellence for AI in Science (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
+                <tr><td class="topic-id">HORIZON-RAISE-2026-01-02</td><td class="topic-title">Thematic Networks of Excellence for AI in Science – Agriculture and Environmental Pollution (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CL5 CLIMATE -->
+      <div class="cluster-panel" id="panel-cl5">
+        <div class="cluster-meta">
+          <div class="cluster-meta-item"><span class="label">Cluster</span><span class="value">Cluster 5: Climate, Energy & Mobility</span></div>
+          <div class="cluster-meta-item"><span class="label">Topics</span><span class="value">14</span></div>
+          <div class="cluster-meta-item"><span class="label">Deadlines</span><span class="value">14 & 15 Apr 2026</span></div>
+          <div class="cluster-meta-item"><span class="label">Key Partnership</span><span class="value">2ZERO, ZEWT</span></div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Destination 1: Climate Sciences and Responses</h4>
+            <span class="badge type-badge type-RIA">5 topics</span>
+            <span class="deadline-tag">Deadline: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-01</td><td class="topic-title">Next generation climate monitoring and related capabilities</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-02</td><td class="topic-title">Advancing European climate risk assessments</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-03</td><td class="topic-title">Economics of climate change and cost of inaction</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4m</td><td>up to 4</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-04</td><td class="topic-title">Fighting disinformation and effectively communicating on climate change</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-05</td><td class="topic-title">Improving climate and weather models for Africa</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7m</td><td>up to 3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Climate Science — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">1 topic</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL5-2026-08-Two-Stage-D1-06</td><td class="topic-title">Closing knowledge gaps on Earth system science for global/regional assessments and climate policy</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-9m</td><td>up to 7</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Destination 5: Clean and Competitive Transport</h4>
+            <span class="badge type-badge type-IA">6 topics</span>
+            <span class="deadline-tag">Deadline: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-01</td><td class="topic-title">Large-scale demonstration of HD Battery Electric Vehicles for long-haul logistics (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€34m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-02</td><td class="topic-title">Energy-efficient software-defined EVs (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€16m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-07</td><td class="topic-title">AI-assisted digital aircraft design, manufacturing and MRO</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-11</td><td class="topic-title">Ports of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-12</td><td class="topic-title">Shipyards of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-13</td><td class="topic-title">Safety of renewable waterborne fuels in port areas (ZEWT)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Transport — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">2 topics</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL5-2026-06-Two-Stage-D5-10</td><td class="topic-title">Disruptive technologies for energy saving onboard long-distance ships (ZEWT)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL5-2026-06-Two-Stage-D5-19</td><td class="topic-title">Non-exhaust emissions in road and railway transport</td><td><span class="type-badge type-RIA">RIA</span></td><td>€3.5-4m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- CL6 FOOD/BIO -->
+      <div class="cluster-panel" id="panel-cl6">
+        <div class="cluster-meta">
+          <div class="cluster-meta-item"><span class="label">Cluster</span><span class="value">Cluster 6: Food, Bioeconomy, Environment</span></div>
+          <div class="cluster-meta-item"><span class="label">Topics</span><span class="value">35</span></div>
+          <div class="cluster-meta-item"><span class="label">Deadlines</span><span class="value">14–16 Apr 2026</span></div>
+          <div class="cluster-meta-item"><span class="label">Sub-areas</span><span class="value">6</span></div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Farm2Fork — Single-Stage Topics</h4>
+            <span class="badge type-badge type-RIA">14 topics</span>
+            <span class="deadline-tag">Deadline: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-01</td><td class="topic-title">Innovative phytosanitary treatments for regulated plant pests</td><td>€5.9m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-02</td><td class="topic-title">Tackling pesticide resistance: detection, management, foresight</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-03</td><td class="topic-title">Boosting competitiveness of protein crops in Europe</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-04</td><td class="topic-title">Accelerating breeding tools for perennial crops (fruits, nuts)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-05</td><td class="topic-title">Circularity and diversification of terrestrial livestock systems</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-06</td><td class="topic-title">Advanced solutions for controlled environment agriculture (CEA)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-07</td><td class="topic-title">Strengthening EU plant protection ecosystem</td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-08</td><td class="topic-title">Sustainable management of key migratory fish species</td><td>€7m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-09</td><td class="topic-title">Sustainable diets for cardiovascular disease prevention with digital apps</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-10</td><td class="topic-title">Sustainable diets based on health status of ageing population</td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-11</td><td class="topic-title">Holistic microbiome research for sustainable food systems</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-12</td><td class="topic-title">Leveraging R&I knowledge on microbiome</td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-13</td><td class="topic-title">Plant health and reducing losses in Africa (FNSSA)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-14</td><td class="topic-title">Green Transition Food Processing Africa</td><td>€5-6m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Farm2Fork — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">2 topics</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-01-two-stage</td><td class="topic-title">Open topic: Improving agricultural competitiveness through efficient use of production factors</td><td>€4.5m</td><td>3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-02-two-stage</td><td class="topic-title">Open topic: Boosting organic farming for competitive, sustainable, resilient sector</td><td>€6m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Land, Ocean and Water for Climate Action</h4>
+            <span class="badge type-badge type-RIA">2 topics</span>
+            <span class="deadline-tag">Deadline: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-CLIMATE-01</td><td class="topic-title">Effective, fair policies for climate mitigation/adaptation in agriculture and forestry</td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-CLIMATE-02</td><td class="topic-title">Towards the water infrastructures of the future</td><td>€5m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Resilient, Inclusive Communities</h4>
+            <span class="badge type-badge type-RIA">1 topic</span>
+            <span class="deadline-tag">Deadline: 14 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-02-COMMUNITIES-01</td><td class="topic-title">Boosting sustainable competitiveness in rural areas through innovation</td><td>€5-6m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Innovative Governance — Single-Stage</h4>
+            <span class="badge type-badge type-RIA">10 topics</span>
+            <span class="deadline-tag">Deadline: 15 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-01</td><td class="topic-title">Additional activities for Sustainable Blue Economy Partnership</td><td>€38m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-02</td><td class="topic-title">Social drivers in agriculture for social sustainability assessment</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-03</td><td class="topic-title">Empowering the UN Decade of Ocean Science</td><td>€3m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-04</td><td class="topic-title">Supporting AllAtlantic Ocean Research and Innovation Alliance</td><td>€4.5m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-05</td><td class="topic-title">European contribution to WMO Global Greenhouse Gas Watch</td><td>€7m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-06</td><td class="topic-title">Services and business incubator for geospatial open-source</td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-07</td><td class="topic-title">Interconnect Earth Observation research for environmental policies</td><td>€5.4m</td><td>1</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-08</td><td class="topic-title">Boosting data availability and AI solutions in food</td><td>€7.5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-09</td><td class="topic-title">Knowledge flows to practice via EU thematic knowledge hubs</td><td>€3.5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-10</td><td class="topic-title">Innovation via on-farm demonstrations and cost-benefit analysis</td><td>€4-5m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Innovative Governance — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">1 topic</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 16 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-01-two-stage</td><td class="topic-title">Open topic: Earth Intelligence solutions using environmental observations and AI</td><td>€6m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Biodiversity — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">4 topics</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 16 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-01-two-stage</td><td class="topic-title">Living labs for co-creating solutions for ecosystem restoration</td><td>€7m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-02-two-stage</td><td class="topic-title">Open topic: Causes of species rapid decline and actionable solutions</td><td>€3m</td><td>4</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-03-two-stage</td><td class="topic-title">Unlocking citizen action for nature protection and restoration</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-04-two-stage</td><td class="topic-title">Mainstreaming Nature-Based Solutions for nature positive economy</td><td>€6m</td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Biodiversity — Single-Stage</h4>
+            <span class="badge type-badge type-RIA">1 topic</span>
+            <span class="deadline-tag">Opens 17 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-05</td><td class="topic-title">Advancing integrated scenarios and prediction models for nature positive society</td><td>€5m</td><td>2</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Circular Economy & Bioeconomy — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">2 topics</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 16 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-CIRCBIO-01-two-stage</td><td class="topic-title">Deploying circular solutions through living labs in cities and regions (CCRI)</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-CIRCBIO-02-two-stage</td><td class="topic-title">Open topic: CCRI to strengthen urban manufacturing for Clean Industrial Deal</td><td>€6m</td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Clean Environment & Zero Pollution — Two-Stage (Stage 1)</h4>
+            <span class="badge type-badge type-RIA">1 topic</span>
+            <span class="stage-badge">Two-Stage</span>
+            <span class="deadline-tag">Stage 1: 16 Apr 2026</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-CL6-2026-01-ZEROPOLLUTION-01-two-stage</td><td class="topic-title">Decontaminate and bioremediate aquatic pollution</td><td>€7-8m</td><td>3</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- MSCA -->
+      <div class="cluster-panel" id="panel-msca">
+        <div class="cluster-meta">
+          <div class="cluster-meta-item"><span class="label">Programme</span><span class="value">Marie Skłodowska-Curie Actions</span></div>
+          <div class="cluster-meta-item"><span class="label">Topics</span><span class="value">1</span></div>
+          <div class="cluster-meta-item"><span class="label">Deadline</span><span class="value">15 Apr 2026</span></div>
+        </div>
+
+        <div class="sub-group">
+          <div class="sub-group-header">
+            <h4>Staff Exchanges</h4>
+            <span class="badge type-badge type-MSCA-SE">1 topic</span>
+          </div>
+          <div class="table-wrapper">
+            <table class="topics-table">
+              <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
+              <tbody>
+                <tr><td class="topic-id">HORIZON-MSCA-2026-SE-01-01</td><td class="topic-title">MSCA Staff Exchanges 2026</td><td><span class="type-badge type-MSCA-SE">MSCA-SE</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== 30-DAY ACTION PLAN ========== -->
+<section class="section" id="action-plan">
+  <div class="container-narrow">
+    <div class="section-header fade-in">
+      <h2>30-Day Action Plan</h2>
+      <p>A strategic timeline for applicants with one month until the deadline wave</p>
+    </div>
+
+    <div class="timeline fade-in">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h4>Week 1: Foundation</h4>
+        <div class="timeline-date">Now — 23 March 2026</div>
+        <ul class="timeline-tasks">
+          <li>Finalize consortium composition and confirm partner commitments in writing</li>
+          <li>Assign clear roles: coordinator, WP leaders, budget officer, ethics lead</li>
+          <li>Complete Part B outline with section responsibilities and word limits</li>
+          <li>Begin drafting the Excellence section — objectives, methodology overview</li>
+          <li>Register on the Funding & Tenders Portal and start Part A administrative forms</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h4>Week 2: Drafting</h4>
+        <div class="timeline-date">23 — 30 March 2026</div>
+        <ul class="timeline-tasks">
+          <li>Draft the full Excellence section — align methodology with evaluation criteria</li>
+          <li>Prepare budget estimates per partner using EC cost model templates</li>
+          <li>Begin Impact section — expected outcomes, dissemination and exploitation plan</li>
+          <li>Compile CVs and track records for key personnel</li>
+          <li>Check eligibility conditions (country requirements, partnership rules)</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h4>Week 3: Refinement</h4>
+        <div class="timeline-date">30 March — 6 April 2026</div>
+        <ul class="timeline-tasks">
+          <li>Complete Impact section with quantified KPIs and sustainability plan</li>
+          <li>Draft Implementation section — work packages, Gantt chart, milestones, deliverables</li>
+          <li>Internal review round — circulate to all partners for feedback</li>
+          <li>Address AI disclosure requirements (mandatory since 2024)</li>
+          <li>Prepare risk assessment table and ethics self-assessment</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <h4>Week 4: Finalization</h4>
+        <div class="timeline-date">6 — 14/15 April 2026</div>
+        <ul class="timeline-tasks">
+          <li>Final editorial review — consistency, language, formatting, page limits</li>
+          <li>Complete ethics self-assessment and attach required ethics documents</li>
+          <li>Finalize Part A administrative forms and budget tables in the portal</li>
+          <li>Upload Part B PDF and verify all attachments in the submission system</li>
+          <li>Submit at least 48 hours before the deadline — allow buffer for technical issues</li>
+          <li>Celebrate and prepare for potential evaluation rebuttal phase</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== KEY TIPS ========== -->
+<section class="section" id="tips">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Key Tips for Applicants</h2>
+      <p>Essential guidance to strengthen your Horizon Europe proposal</p>
+    </div>
+
+    <div class="tips-grid fade-in">
+      <div class="tip-card">
+        <div class="tip-icon">&#x1F916;</div>
+        <h3>AI Disclosure Requirements</h3>
+        <p>Since 2024, Horizon Europe requires disclosure of AI use in proposal writing. Include a clear statement in Part B about any generative AI tools used, their purpose, and how outputs were verified. See the <a href="https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en" target="_blank" rel="noopener noreferrer">EC Living Guidelines on Responsible Use of Generative AI</a>.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#x2705;</div>
+        <h3>Evaluation Criteria Reminder</h3>
+        <p>For RIA and IA proposals, the standard evaluation weighting is: <strong>Excellence</strong> (typically 50%), <strong>Impact</strong> (30%), <strong>Implementation</strong> (20%). Each criterion is scored 0–5. Minimum threshold is 4/5 for Excellence and 3/5 for the other two. Align your writing to these weights.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#x1F91D;</div>
+        <h3>Consortium Building</h3>
+        <p>Most RIA/IA calls require minimum 3 independent legal entities from 3 different EU Member States or Associated Countries. Prioritize complementary expertise over geography. Check <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/partner-search" target="_blank" rel="noopener noreferrer">Partner Search</a> on the EC portal.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#x1F4B0;</div>
+        <h3>Budget Planning</h3>
+        <p>Typical RIA funding rate is <strong>100%</strong> of eligible costs. IA funding rate is <strong>70%</strong> (100% for non-profit entities). Use direct personnel costs + 25% flat rate for indirect costs. Budget should match the ambition described in the proposal.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#x1F4CB;</div>
+        <h3>Two-Stage vs Single-Stage</h3>
+        <p>For two-stage calls in CL5/CL6, the April deadline is for <strong>short proposals (~10 pages)</strong>. Focus on concept, novelty, and consortium rationale. Full proposals are only invited for Stage 2 (typically October). Don't over-elaborate — concise impact statements win.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-icon">&#x1F50D;</div>
+        <h3>Partner Search Tools</h3>
+        <p>Leverage <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/horizon-results-platform" target="_blank" rel="noopener noreferrer">Horizon Results Platform</a>, <a href="https://cordis.europa.eu/" target="_blank" rel="noopener noreferrer">CORDIS</a>, and <a href="https://www.net4society.eu/" target="_blank" rel="noopener noreferrer">NCP networks</a> to find experienced partners. Also check enterprise.europe.network for SME partners.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ========== USEFUL LINKS ========== -->
+<section class="section" id="links">
+  <div class="container">
+    <div class="section-header fade-in">
+      <h2>Useful Links</h2>
+      <p>Official resources for Horizon Europe applicants</p>
+    </div>
+
+    <div class="links-grid fade-in">
+      <a class="link-card" href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <div class="link-text"><h3>EU Funding & Tenders Portal</h3><p>Official call publications, submission system, and partner search</p></div>
+      </a>
+      <a class="link-card" href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/how-to-participate/reference-documents" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div class="link-text"><h3>Work Programme 2025–27 Documents</h3><p>Official work programme texts with topic descriptions and budgets</p></div>
+      </a>
+      <a class="link-card" href="https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+        <div class="link-text"><h3>EC Guidelines on Responsible AI Use in Research</h3><p>Living guidelines on generative AI disclosure requirements</p></div>
+      </a>
+      <a class="link-card" href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/support/ncp" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="link-text"><h3>National Contact Points (NCPs)</h3><p>Free national support for proposal preparation and partner search</p></div>
+      </a>
+      <a class="link-card" href="https://hadea.ec.europa.eu/news/horizon-europe-2026-industry-calls-now-published-2025-12-19_en" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="link-text"><h3>HADEA — Industry Calls Published</h3><p>Announcement of CL4 Industry pillar calls for 2026</p></div>
+      </a>
+      <a class="link-card" href="https://hadea.ec.europa.eu/news/horizon-europe-2026-digital-calls-now-published-2026-01-14_en" target="_blank" rel="noopener noreferrer">
+        <div class="link-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="link-text"><h3>HADEA — Digital Calls Published</h3><p>Announcement of CL4 Digital pillar calls for 2026</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <p>Prepared by <strong><a href="https://www.global-disruption.com" target="_blank" rel="noopener noreferrer">Global Disruption</a></strong> · Kristjan Zemljič · EU Grant Engineer · March 2026</p>
+    <p>Data sourced from <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals" target="_blank" rel="noopener noreferrer">EU Funding & Tenders Portal</a> and European Commission work programmes 2025–27.</p>
+    <p>Additional sources: <a href="https://hadea.ec.europa.eu/news/horizon-europe-2026-industry-calls-now-published-2025-12-19_en" target="_blank" rel="noopener noreferrer">HADEA Industry Calls</a> · <a href="https://hadea.ec.europa.eu/news/horizon-europe-2026-digital-calls-now-published-2026-01-14_en" target="_blank" rel="noopener noreferrer">HADEA Digital Calls</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-2026-27-digital-industry-and-space-cluster-4/" target="_blank" rel="noopener noreferrer">IUK CL4</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-2026-27-climate-energy-and-mobility-cluster-5/" target="_blank" rel="noopener noreferrer">IUK CL5</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-food-bioeconomy-natural-resources-agriculture-and-environment-cluster-6/" target="_blank" rel="noopener noreferrer">IUK CL6</a></p>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<script>
+// ========== THEME TOGGLE ==========
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = r.getAttribute('data-theme') || 'dark';
+  if(t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+    t.innerHTML = d === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    // Re-render charts with new theme
+    renderCharts();
+  });
+})();
+
+// ========== COUNTDOWN ==========
+function updateCountdown() {
+  // 14 April 2026, 17:00 CEST (UTC+2) = 15:00 UTC
+  const deadline = new Date(Date.UTC(2026, 3, 14, 15, 0, 0));
+  const now = new Date();
+  const diff = deadline - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '0';
+    document.getElementById('cd-mins').textContent = '0';
+    document.getElementById('cd-secs').textContent = '0';
+    return;
+  }
+  const days = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const secs = Math.floor((diff % (1000*60)) / 1000);
+  document.getElementById('cd-days').textContent = days;
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ========== ANIMATED COUNTERS ==========
+function animateCounter(el) {
+  if (el.dataset.animated) return;
+  el.dataset.animated = '1';
+  const target = parseInt(el.dataset.count);
+  const duration = 1500;
+  const start = performance.now();
+  function update(now) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(eased * target);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+// Animate hero counters immediately on page load
+document.querySelectorAll('.hero [data-count]').forEach(el => animateCounter(el));
+
+// ========== SCROLL ANIMATIONS ==========
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      entry.target.querySelectorAll('[data-count]').forEach(el => animateCounter(el));
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ========== SCROLL TO TOP ==========
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 600);
+});
+
+// ========== CLUSTER TABS ==========
+document.querySelectorAll('.cluster-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.cluster-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    document.querySelectorAll('.cluster-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    tab.setAttribute('aria-selected', 'true');
+    document.getElementById('panel-' + tab.dataset.cluster).classList.add('active');
+  });
+});
+
+// ========== CHARTS ==========
+let clusterChartInst, actionChartInst, deadlineChartInst;
+
+function getChartColors() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    text: isDark ? '#e2e8f0' : '#1a202c',
+    muted: isDark ? '#8b99ad' : '#64748b',
+    grid: isDark ? 'rgba(42,53,68,0.5)' : 'rgba(209,217,224,0.5)',
+    teal: isDark ? '#01969e' : '#01696f',
+    terra: isDark ? '#c17a50' : '#964219',
+    olive: isDark ? '#7a9a5a' : '#5a7a3a',
+    blue: isDark ? '#5591c7' : '#006494',
+    gold: isDark ? '#e8af34' : '#d19900',
+    purple: isDark ? '#a86fdf' : '#7a39bb',
+  };
+}
+
+function renderCharts() {
+  const c = getChartColors();
+
+  // Cluster donut
+  if (clusterChartInst) clusterChartInst.destroy();
+  clusterChartInst = new Chart(document.getElementById('clusterChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['CL1 Health', 'CL4 Digital/Industry', 'CL5 Climate/Mobility', 'CL6 Food/Bio', 'MSCA'],
+      datasets: [{
+        data: [24, 35, 14, 35, 1],
+        backgroundColor: [c.teal, c.terra, c.olive, c.blue, c.gold],
+        borderWidth: 0,
+        hoverOffset: 8,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      cutout: '62%',
+      plugins: {
+        legend: { display: true, position: 'bottom', labels: { color: c.muted, font: { size: 11, family: 'Inter' }, padding: 12, usePointStyle: true, pointStyleWidth: 8 } },
+        tooltip: { backgroundColor: c.text === '#e2e8f0' ? '#1a2332' : '#fff', titleColor: c.text === '#e2e8f0' ? '#e2e8f0' : '#1a202c', bodyColor: c.text === '#e2e8f0' ? '#8b99ad' : '#64748b', borderColor: c.grid, borderWidth: 1, padding: 12, cornerRadius: 8, titleFont: { weight: 600 } },
+      }
+    }
+  });
+
+  // Action type donut
+  if (actionChartInst) actionChartInst.destroy();
+  actionChartInst = new Chart(document.getElementById('actionChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['RIA', 'IA', 'CSA', 'Other (PPI, CoFund, Prize, MSCA-SE)'],
+      datasets: [{
+        data: [62, 18, 20, 7],
+        backgroundColor: [c.teal, c.terra, c.olive, c.gold],
+        borderWidth: 0,
+        hoverOffset: 8,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: true,
+      cutout: '62%',
+      plugins: {
+        legend: { display: true, position: 'bottom', labels: { color: c.muted, font: { size: 11, family: 'Inter' }, padding: 12, usePointStyle: true, pointStyleWidth: 8 } },
+        tooltip: { backgroundColor: c.text === '#e2e8f0' ? '#1a2332' : '#fff', titleColor: c.text === '#e2e8f0' ? '#e2e8f0' : '#1a202c', bodyColor: c.text === '#e2e8f0' ? '#8b99ad' : '#64748b', borderColor: c.grid, borderWidth: 1, padding: 12, cornerRadius: 8, titleFont: { weight: 600 } },
+      }
+    }
+  });
+
+  // Deadline bar chart
+  if (deadlineChartInst) deadlineChartInst.destroy();
+  deadlineChartInst = new Chart(document.getElementById('deadlineChart'), {
+    type: 'bar',
+    data: {
+      labels: ['14 Apr', '15 Apr', '16 Apr', '21 Apr'],
+      datasets: [{
+        label: 'Topics',
+        data: [27, 44, 19, 17],
+        backgroundColor: [c.teal, c.blue, c.olive, c.terra],
+        borderRadius: 6,
+        borderSkipped: false,
+        barThickness: 40,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      indexAxis: 'x',
+      plugins: {
+        legend: { display: false },
+        tooltip: { backgroundColor: c.text === '#e2e8f0' ? '#1a2332' : '#fff', titleColor: c.text === '#e2e8f0' ? '#e2e8f0' : '#1a202c', bodyColor: c.text === '#e2e8f0' ? '#8b99ad' : '#64748b', borderColor: c.grid, borderWidth: 1, padding: 12, cornerRadius: 8, titleFont: { weight: 600 } },
+      },
+      scales: {
+        x: { grid: { display: false }, ticks: { color: c.muted, font: { size: 12, family: 'Inter', weight: 600 } } },
+        y: { grid: { color: c.grid }, ticks: { color: c.muted, font: { size: 11, family: 'Inter' }, stepSize: 10 }, border: { display: false } },
+      }
+    }
+  });
+}
+
+renderCharts();
+
+// ========== MOBILE NAV CLOSE ON LINK CLICK ==========
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
