@@ -9,12 +9,59 @@
 -->
 <meta name="generator" content="Global Disruption · AI-Augmented Call Intelligence">
 <meta name="author" content="Kristjan Zemljič, Global Disruption">
-<meta property="og:title" content="Horizon Europe April 2026 — Call Intelligence Dashboard">
-<meta property="og:description" content="~100 topics, €1.5B+ in funding across 5 clusters. Prepared by Global Disruption — EU Grant Engineering.">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Horizon Europe April 2026 — Call Intelligence Dashboard | Global Disruption</title>
-<meta name="description" content="Complete intelligence dashboard for Horizon Europe April 2026 deadlines. ~100 topics, €1.5B+ in funding across 5 clusters. Prepared by Global Disruption — EU Grant Engineering.">
+<meta name="description" content="Interactive dashboard mapping all 107 Horizon Europe topics with April 2026 deadlines. €1.5B+ across Health, Digital, Climate, Food & Bio clusters. Every topic linked to the Participant Portal. Free resource by Global Disruption.">
+<meta name="keywords" content="Horizon Europe, April 2026, EU funding, call intelligence, RIA, IA, CSA, Cluster 1, Cluster 4, Cluster 5, Cluster 6, MSCA, EU grants, research funding, grant writing, Global Disruption">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://global-disruption.com/horizon-europe-april-2026/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Horizon Europe April 2026 — Call Intelligence Dashboard">
+<meta property="og:description" content="107 topics, €1.5B+ in funding, 4 deadlines in one week. Every topic linked to the Participant Portal. Free resource by Global Disruption.">
+<meta property="og:url" content="https://global-disruption.com/horizon-europe-april-2026/">
+<meta property="og:site_name" content="Global Disruption">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Horizon Europe April 2026 — Call Intelligence Dashboard">
+<meta name="twitter:description" content="107 topics, €1.5B+ in funding. Interactive dashboard for the April 2026 Horizon Europe deadline wave.">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Horizon Europe April 2026 — Call Intelligence Dashboard",
+  "description": "Interactive dashboard mapping all 107 Horizon Europe topics with April 2026 deadlines across Health, Digital & Industry, Climate, Food & Bioeconomy, and MSCA clusters. Every topic linked directly to the EU Participant Portal.",
+  "url": "https://global-disruption.com/horizon-europe-april-2026/",
+  "datePublished": "2026-03-17",
+  "dateModified": "2026-03-17",
+  "author": {
+    "@type": "Person",
+    "name": "Kristjan Zemljič",
+    "url": "https://www.linkedin.com/in/kristjanzemljic/",
+    "jobTitle": "EU Grant Engineer"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Global Disruption",
+    "url": "https://global-disruption.com"
+  },
+  "about": {
+    "@type": "GovernmentService",
+    "name": "Horizon Europe",
+    "provider": {
+      "@type": "GovernmentOrganization",
+      "name": "European Commission"
+    }
+  },
+  "keywords": ["Horizon Europe", "EU funding", "research grants", "April 2026 deadlines", "call intelligence"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&display=swap" rel="stylesheet">
@@ -59,14 +106,14 @@
   --color-text-muted: #8b99ad;
   --color-text-faint: #4a5568;
   --color-text-inverse: #0d1117;
-  --color-primary: #01969e;
-  --color-primary-hover: #01b0ba;
-  --color-primary-active: #01696f;
-  --color-primary-dim: rgba(1, 150, 158, 0.15);
-  --color-accent-terra: #c17a50;
+  --color-primary: #483D8B;
+  --color-primary-hover: #5A4EA0;
+  --color-primary-active: #362E6B;
+  --color-primary-dim: rgba(72, 61, 139, 0.15);
+  --color-accent-terra: #FF9739;
   --color-accent-olive: #7a9a5a;
   --color-accent-blue: #5591c7;
-  --color-accent-purple: #a86fdf;
+  --color-accent-purple: #8B7FCC;
   --color-accent-gold: #e8af34;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
@@ -85,14 +132,14 @@
   --color-text-muted: #64748b;
   --color-text-faint: #a0aec0;
   --color-text-inverse: #ffffff;
-  --color-primary: #01696f;
-  --color-primary-hover: #01565b;
-  --color-primary-active: #014347;
-  --color-primary-dim: rgba(1, 105, 111, 0.1);
-  --color-accent-terra: #964219;
+  --color-primary: #362E6B;
+  --color-primary-hover: #2A2355;
+  --color-primary-active: #1F1A40;
+  --color-primary-dim: rgba(54, 46, 107, 0.1);
+  --color-accent-terra: #D47A20;
   --color-accent-olive: #5a7a3a;
   --color-accent-blue: #006494;
-  --color-accent-purple: #7a39bb;
+  --color-accent-purple: #6A5CAD;
   --color-accent-gold: #d19900;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
@@ -124,7 +171,7 @@ button { cursor: pointer; background: none; border: none; }
 table { border-collapse: collapse; width: 100%; }
 a { color: var(--color-primary); text-decoration: none; transition: color var(--transition-interactive); }
 a:hover { color: var(--color-primary-hover); }
-::selection { background: rgba(1,150,158,0.25); color: var(--color-text); }
+::selection { background: rgba(72,61,139,0.25); color: var(--color-text); }
 :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
@@ -187,7 +234,7 @@ a:hover { color: var(--color-primary-hover); }
 }
 .hero::before {
   content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 200%;
-  background: radial-gradient(ellipse, rgba(1,150,158,0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(72,61,139,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-content { position: relative; z-index: 1; }
@@ -199,7 +246,7 @@ a:hover { color: var(--color-primary-hover); }
   letter-spacing: 0.08em; margin-bottom: var(--space-6);
 }
 .hero-badge .pulse {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary);
+  width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent-terra);
   animation: pulse 2s ease-in-out infinite;
 }
 @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
@@ -210,7 +257,7 @@ a:hover { color: var(--color-primary-hover); }
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-.hero h1 em { font-style: normal; -webkit-text-fill-color: var(--color-primary); color: var(--color-primary); }
+.hero h1 em { font-style: normal; -webkit-text-fill-color: var(--color-accent-terra); color: var(--color-accent-terra); }
 .hero-subtitle {
   font-size: var(--text-lg); color: var(--color-text-muted);
   margin-bottom: var(--space-8); max-width: 55ch; font-weight: 400;
@@ -220,7 +267,7 @@ a:hover { color: var(--color-primary-hover); }
   padding-top: var(--space-6); border-top: 1px solid var(--color-divider);
 }
 .hero-stat { display: flex; flex-direction: column; gap: var(--space-1); }
-.hero-stat-value { font-size: var(--text-xl); font-weight: 800; font-variant-numeric: tabular-nums lining-nums; color: var(--color-primary); }
+.hero-stat-value { font-size: var(--text-xl); font-weight: 800; font-variant-numeric: tabular-nums lining-nums; color: var(--color-accent-terra); }
 .hero-stat-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
 
 /* Countdown */
@@ -261,7 +308,7 @@ a:hover { color: var(--color-primary-hover); }
 }
 .kpi-card::before {
   content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--color-primary);
+  background: var(--color-accent-terra);
 }
 .kpi-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .kpi-label { font-size: var(--text-xs); color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: var(--space-2); }
@@ -347,11 +394,11 @@ a:hover { color: var(--color-primary-hover); }
   padding: 2px 10px; border-radius: var(--radius-xl); white-space: nowrap;
   text-transform: uppercase; letter-spacing: 0.04em;
 }
-.type-RIA { background: rgba(1,150,158,0.15); color: var(--color-primary); }
-.type-IA { background: rgba(193,122,80,0.15); color: var(--color-accent-terra); }
+.type-RIA { background: rgba(72,61,139,0.15); color: var(--color-primary); }
+.type-IA { background: rgba(255,151,57,0.15); color: var(--color-accent-terra); }
 .type-CSA { background: rgba(122,154,90,0.15); color: var(--color-accent-olive); }
 .type-PPI { background: rgba(85,145,199,0.15); color: var(--color-accent-blue); }
-.type-CoFund { background: rgba(168,111,223,0.15); color: var(--color-accent-purple); }
+.type-CoFund { background: rgba(139,127,204,0.15); color: var(--color-accent-purple); }
 .type-MSCA-SE { background: rgba(232,175,52,0.15); color: var(--color-accent-gold); }
 .type-Prize { background: rgba(232,175,52,0.15); color: var(--color-accent-gold); }
 .type-default { background: rgba(139,153,173,0.15); color: var(--color-text-muted); }
@@ -368,7 +415,7 @@ a:hover { color: var(--color-primary-hover); }
 .timeline { position: relative; padding-left: var(--space-10); }
 .timeline::before {
   content: ''; position: absolute; left: 15px; top: 0; bottom: 0;
-  width: 2px; background: linear-gradient(to bottom, var(--color-primary), var(--color-primary-active));
+  width: 2px; background: linear-gradient(to bottom, var(--color-primary), var(--color-accent-terra));
 }
 .timeline-item { position: relative; margin-bottom: var(--space-8); }
 .timeline-item:last-child { margin-bottom: 0; }
@@ -400,7 +447,7 @@ a:hover { color: var(--color-primary-hover); }
   border-radius: var(--radius-lg); padding: var(--space-6);
   transition: all var(--transition-interactive);
 }
-.tip-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.tip-card:hover { border-color: var(--color-accent-terra); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .tip-icon { font-size: 1.5rem; margin-bottom: var(--space-3); }
 .tip-card h3 { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
 .tip-card p { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
@@ -417,8 +464,8 @@ a:hover { color: var(--color-primary-hover); }
 .link-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .link-card .link-icon {
   width: 40px; height: 40px; border-radius: var(--radius-md);
-  background: var(--color-primary-dim); display: flex; align-items: center; justify-content: center;
-  color: var(--color-primary); flex-shrink: 0;
+  background: rgba(255,151,57,0.12); display: flex; align-items: center; justify-content: center;
+  color: var(--color-accent-terra); flex-shrink: 0;
 }
 .link-card .link-text h3 { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
 .link-card .link-text p { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: 2px; }
@@ -429,7 +476,7 @@ a:hover { color: var(--color-primary-hover); }
   padding: var(--space-10) 0;
   text-align: center;
 }
-.footer p { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-2); }
+.footer p { font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-2); max-width: 80ch; margin-left: auto; margin-right: auto; }
 .footer a { color: var(--color-primary); }
 
 /* ========== SCROLL ANIMATION ========== */
@@ -465,11 +512,11 @@ a:hover { color: var(--color-primary-hover); }
 .cta-btn {
   display: inline-flex; align-items: center; gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  background: var(--color-primary); color: #fff;
+  background: var(--color-accent-terra); color: #fff;
   border-radius: var(--radius-lg); font-weight: 600; font-size: var(--text-sm);
   transition: all var(--transition-interactive); text-decoration: none;
 }
-.cta-btn:hover { background: var(--color-primary-hover); color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.cta-btn:hover { background: #e0831f; color: #fff; transform: translateY(-1px); box-shadow: var(--shadow-md); }
 
 /* Scroll to top */
 .scroll-top {
@@ -483,6 +530,33 @@ a:hover { color: var(--color-primary-hover); }
 }
 .scroll-top.visible { opacity: 1; pointer-events: auto; }
 .scroll-top:hover { background: var(--color-primary-hover); transform: translateY(-2px); }
+
+/* Topic ID links */
+.topic-id a {
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  transition: color var(--transition-interactive);
+  font-weight: 500;
+}
+.topic-id a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.topic-id a .link-icon {
+  width: 0.75em;
+  height: 0.75em;
+  opacity: 0;
+  transition: opacity var(--transition-interactive), transform var(--transition-interactive);
+  flex-shrink: 0;
+}
+.topic-id a:hover .link-icon {
+  opacity: 0.7;
+  transform: translate(1px, -1px);
+}
 </style>
 </head>
 <body>
@@ -642,25 +716,25 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-02</td><td class="topic-title">Innovative interventions to prevent the harmful effects of digital technologies on children's mental health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-03</td><td class="topic-title">Advancing research on prevention, diagnosis, and management of post-infection long-term conditions</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-04</td><td class="topic-title">Development of novel vaccines for viral pathogens with epidemic potential</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-09</td><td class="topic-title">Multisectoral approach to tackle chronic non-communicable diseases: implementation research</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-11</td><td class="topic-title">Sex/gender-specific mechanisms of cardiovascular diseases: determinants, risk factors and pathways</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-DISEASE-15</td><td class="topic-title">Scaling up innovation in cardiovascular health</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-01</td><td class="topic-title">Towards a better understanding and anticipation of climate change impacts on health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-04</td><td class="topic-title">Towards climate resilient, prepared and carbon neutral populations and healthcare systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-ENVHLTH-05</td><td class="topic-title">Support for a multilateral initiative on climate change and health research</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-STAYHLTH-02</td><td class="topic-title">Behavioural interventions as primary prevention for NCDs among young people</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-STAYHLTH-03</td><td class="topic-title">Building public trust and outreach in the life sciences</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-03</td><td class="topic-title">Integrating New Approach Methodologies (NAMs) to advance biomedical research and regulatory testing</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-05</td><td class="topic-title">Pilot actions for follow-on funding: Leveraging EU-funded collaborative research in regenerative medicine</td><td><span class="type-badge type-IA">IA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-06</td><td class="topic-title">Support to ERA action on accelerating NAMs to reduce and replace animal testing</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-TOOL-07</td><td class="topic-title">Establishing a European network of Centres of Excellence for ATMPs</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-IND-03</td><td class="topic-title">Regulatory science to support translational development of patient-centred health technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-CARE-01</td><td class="topic-title">Public procurement of innovative solutions for improving citizens' access to healthcare</td><td><span class="type-badge type-PPI">PPI</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-01-CARE-03</td><td class="topic-title">Identifying and addressing low-value care in health and care systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2026-04-CARE-04</td><td class="topic-title">Enhancing and enlarging the European Partnership on Personalised Medicine (EP PerMEd) (Top-up)</td><td><span class="type-badge type-CoFund">CoFund</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-02" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Innovative interventions to prevent the harmful effects of digital technologies on children's mental health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advancing research on prevention, diagnosis, and management of post-infection long-term conditions</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-04" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Development of novel vaccines for viral pathogens with epidemic potential</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-09" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-09<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Multisectoral approach to tackle chronic non-communicable diseases: implementation research</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-11" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-11<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Sex/gender-specific mechanisms of cardiovascular diseases: determinants, risk factors and pathways</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-disease-15" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-DISEASE-15<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Scaling up innovation in cardiovascular health</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-envhlth-01" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-ENVHLTH-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Towards a better understanding and anticipation of climate change impacts on health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-envhlth-04" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-ENVHLTH-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Towards climate resilient, prepared and carbon neutral populations and healthcare systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-envhlth-05" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-ENVHLTH-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Support for a multilateral initiative on climate change and health research</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-stayhlth-02" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-STAYHLTH-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Behavioural interventions as primary prevention for NCDs among young people</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-stayhlth-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-STAYHLTH-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Building public trust and outreach in the life sciences</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-tool-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-TOOL-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Integrating New Approach Methodologies (NAMs) to advance biomedical research and regulatory testing</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-tool-05" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-TOOL-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Pilot actions for follow-on funding: Leveraging EU-funded collaborative research in regenerative medicine</td><td><span class="type-badge type-IA">IA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-tool-06" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-TOOL-06<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Support to ERA action on accelerating NAMs to reduce and replace animal testing</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-tool-07" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-TOOL-07<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Establishing a European network of Centres of Excellence for ATMPs</td><td><span class="type-badge type-CSA">CSA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-ind-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-IND-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Regulatory science to support translational development of patient-centred health technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-care-01" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-CARE-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Public procurement of innovative solutions for improving citizens' access to healthcare</td><td><span class="type-badge type-PPI">PPI</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-01-care-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-01-CARE-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Identifying and addressing low-value care in health and care systems</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2026-04-care-04" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2026-04-CARE-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Enhancing and enlarging the European Partnership on Personalised Medicine (EP PerMEd) (Top-up)</td><td><span class="type-badge type-CoFund">CoFund</span></td><td class="deadline-tag">16 Apr 2026</td></tr>
               </tbody>
             </table>
           </div>
@@ -677,11 +751,11 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-HLTH-2025-03-DISEASE-02-two-stage</td><td class="topic-title">Advancing innovative interventions for mental, behavioural and neurodevelopmental disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2025-03-STAYHLTH-01-two-stage</td><td class="topic-title">Improving the quality of life of persons with intellectual disabilities and their families</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2025-03-ENVHLTH-01-two-stage</td><td class="topic-title">The impact of pollution on the development and progression of brain diseases and disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2025-03-ENVHLTH-02-two-stage</td><td class="topic-title">Advancing knowledge on the impacts of micro- and nanoplastics on human health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
-                <tr><td class="topic-id">HORIZON-HLTH-2025-03-IND-03-two-stage</td><td class="topic-title">Facilitating multinational clinical studies of orphan/highly innovative medical devices</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2025-03-disease-02" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2025-03-DISEASE-02-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advancing innovative interventions for mental, behavioural and neurodevelopmental disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2025-03-stayhlth-01" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2025-03-STAYHLTH-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Improving the quality of life of persons with intellectual disabilities and their families</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2025-03-envhlth-01" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2025-03-ENVHLTH-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">The impact of pollution on the development and progression of brain diseases and disorders</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2025-03-envhlth-02" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2025-03-ENVHLTH-02-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advancing knowledge on the impacts of micro- and nanoplastics on human health</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-hlth-2025-03-ind-03" target="_blank" rel="noopener noreferrer">HORIZON-HLTH-2025-03-IND-03-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Facilitating multinational clinical studies of orphan/highly innovative medical devices</td><td><span class="type-badge type-RIA">RIA</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
               </tbody>
             </table>
           </div>
@@ -707,21 +781,21 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-23</td><td class="topic-title">Accelerating discovery of chemicals and innovative advanced materials through digitalisation and AI</td><td><span class="type-badge type-IA">IA</span></td><td>€13m</td><td>up to 4</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-24</td><td class="topic-title">Cooperation on innovative advanced materials with Japan</td><td><span class="type-badge type-CSA">CSA</span></td><td>€800k</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-01</td><td class="topic-title">Advanced manufacturing for key products (Made in Europe)</td><td><span class="type-badge type-IA">IA</span></td><td>€6-8m</td><td>up to 6</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-04</td><td class="topic-title">Optimise resource usage in a circular economy (Processes4Planet + Clean Steel)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-8m</td><td>up to 9</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-05</td><td class="topic-title">Circular innovative advanced materials: from design to markets</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-6.5m</td><td>up to 7</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-31</td><td class="topic-title">Efficient CO2 capture/purification/utilisation for competitive products</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 7</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-41</td><td class="topic-title">Enhancing industry-academia knowledge exchange in SSH</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-44</td><td class="topic-title">Attracting management talent for Technology Infrastructures staff</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-45</td><td class="topic-title">Pilot access to Technology Infrastructures for startups/SMEs</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1.5-2.5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-46</td><td class="topic-title">Mapping and service finder for Technology Infrastructures</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-48</td><td class="topic-title">Proof of market: valorisation of Horizon R&I results</td><td><span class="type-badge type-IA">IA</span></td><td>€200k</td><td>up to 25</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-11</td><td class="topic-title">Innovative technologies for raw materials exploration and data modelling</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-12</td><td class="topic-title">Technologies for innovative extraction of critical raw materials</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-13</td><td class="topic-title">Monitoring of secondary raw materials</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-01-MAT-PROD-14</td><td class="topic-title">Improving availability of secondary raw materials through recycling</td><td><span class="type-badge type-IA">IA</span></td><td>€7.5m</td><td>up to 4</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-23" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-23<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Accelerating discovery of chemicals and innovative advanced materials through digitalisation and AI</td><td><span class="type-badge type-IA">IA</span></td><td>€13m</td><td>up to 4</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-24" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-24<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Cooperation on innovative advanced materials with Japan</td><td><span class="type-badge type-CSA">CSA</span></td><td>€800k</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-01" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advanced manufacturing for key products (Made in Europe)</td><td><span class="type-badge type-IA">IA</span></td><td>€6-8m</td><td>up to 6</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-04" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Optimise resource usage in a circular economy (Processes4Planet + Clean Steel)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-8m</td><td>up to 9</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-05" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Circular innovative advanced materials: from design to markets</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-6.5m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-31" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-31<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Efficient CO2 capture/purification/utilisation for competitive products</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-41" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-41<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Enhancing industry-academia knowledge exchange in SSH</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-44" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-44<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Attracting management talent for Technology Infrastructures staff</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-45" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-45<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Pilot access to Technology Infrastructures for startups/SMEs</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1.5-2.5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-46" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-46<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Mapping and service finder for Technology Infrastructures</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-48" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-48<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Proof of market: valorisation of Horizon R&I results</td><td><span class="type-badge type-IA">IA</span></td><td>€200k</td><td>up to 25</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-11" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-11<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Innovative technologies for raw materials exploration and data modelling</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-12" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-12<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Technologies for innovative extraction of critical raw materials</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-7m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-13" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-13<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Monitoring of secondary raw materials</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-14" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-01-MAT-PROD-14<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Improving availability of secondary raw materials through recycling</td><td><span class="type-badge type-IA">IA</span></td><td>€7.5m</td><td>up to 4</td></tr>
               </tbody>
             </table>
           </div>
@@ -737,21 +811,21 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-02</td><td class="topic-title">Open Internet Stack Sovereign Solutions</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7-10.25m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-03</td><td class="topic-title">Open Internet Stack Support for Scale</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DATA-06</td><td class="topic-title">Efficient and compliant access to and use of data (AI/Data/Robotics)</td><td><span class="type-badge type-IA">IA</span></td><td>€11.5-23.5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-01</td><td class="topic-title">Apply AI: Pilot of RAISE 'Science for AI' Pillar</td><td><span class="type-badge type-RIA">RIA</span></td><td>€17m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-19</td><td class="topic-title">Challenge-Driven GenAI4EU Booster in Apply AI sectors</td><td><span class="type-badge type-RIA">RIA</span></td><td>€15m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-08</td><td class="topic-title">Apply AI: Robotics for Manufacturing - Core Skills via Technical Challenges</td><td><span class="type-badge type-RIA">RIA</span></td><td>€18m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-09</td><td class="topic-title">Advanced Local Digital Twins using AI for Early Warning and Preparedness</td><td><span class="type-badge type-IA">IA</span></td><td>€6m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-11</td><td class="topic-title">Grand Challenge on Quantum Sensors for Inertial Navigation</td><td><span class="type-badge type-Prize">Prize</span></td><td>€0.5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-12</td><td class="topic-title">Standards for Quantum Technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-18</td><td class="topic-title">Large-Scale Photonic Quantum Computing Platform Technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td>€10m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-14</td><td class="topic-title">Networking and Future Photonics Strategy (Photonics Partnership)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-15</td><td class="topic-title">Strengthening cooperation of semiconductor-intensive EU regions</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-DIGITAL-EMERGING-17</td><td class="topic-title">Fostering 2D Materials-based emerging technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-HUMAN-01</td><td class="topic-title">Core technologies for Virtual Worlds and Web 4.0 (Virtual Worlds Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€4-5m</td><td>up to 7</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-04-HUMAN-02</td><td class="topic-title">Web 4.0 architectural framework and Open Internet Stack for virtual worlds</td><td><span class="type-badge type-RIA">RIA</span></td><td>€2.8-8.4m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-data-02" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DATA-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open Internet Stack Sovereign Solutions</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7-10.25m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-data-03" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DATA-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open Internet Stack Support for Scale</td><td><span class="type-badge type-CSA">CSA</span></td><td>€4m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-data-06" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DATA-06<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Efficient and compliant access to and use of data (AI/Data/Robotics)</td><td><span class="type-badge type-IA">IA</span></td><td>€11.5-23.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-01" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Apply AI: Pilot of RAISE 'Science for AI' Pillar</td><td><span class="type-badge type-RIA">RIA</span></td><td>€17m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-19" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-19<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Challenge-Driven GenAI4EU Booster in Apply AI sectors</td><td><span class="type-badge type-RIA">RIA</span></td><td>€15m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-08" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-08<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Apply AI: Robotics for Manufacturing - Core Skills via Technical Challenges</td><td><span class="type-badge type-RIA">RIA</span></td><td>€18m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-09" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-09<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advanced Local Digital Twins using AI for Early Warning and Preparedness</td><td><span class="type-badge type-IA">IA</span></td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-11" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-11<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Grand Challenge on Quantum Sensors for Inertial Navigation</td><td><span class="type-badge type-Prize">Prize</span></td><td>€0.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-12" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-12<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Standards for Quantum Technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-18" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-18<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Large-Scale Photonic Quantum Computing Platform Technologies</td><td><span class="type-badge type-RIA">RIA</span></td><td>€10m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-14" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-14<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Networking and Future Photonics Strategy (Photonics Partnership)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-15" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-15<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Strengthening cooperation of semiconductor-intensive EU regions</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-digital-emerging-17" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-DIGITAL-EMERGING-17<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Fostering 2D Materials-based emerging technologies</td><td><span class="type-badge type-CSA">CSA</span></td><td>€1m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-human-01" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-HUMAN-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Core technologies for Virtual Worlds and Web 4.0 (Virtual Worlds Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€4-5m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-04-human-02" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-04-HUMAN-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Web 4.0 architectural framework and Open Internet Stack for virtual worlds</td><td><span class="type-badge type-RIA">RIA</span></td><td>€2.8-8.4m</td><td>up to 3</td></tr>
               </tbody>
             </table>
           </div>
@@ -767,9 +841,9 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL4-2026-05-MAT-PROD-25</td><td class="topic-title">New/enhanced Innovative Advanced Materials for sensing</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7.5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-05-DIGITAL-EMERGING-02</td><td class="topic-title">Next-Generation AI Agents for Real-World Applications (AI/Data/Robotics)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€19m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL4-2026-05-DIGITAL-EMERGING-03</td><td class="topic-title">Next-Generation Agile and Intelligent Robotics Platforms for Industrial/Service Applications</td><td><span class="type-badge type-RIA">RIA</span></td><td>€12-13m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-05-mat-prod-25" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-05-MAT-PROD-25<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">New/enhanced Innovative Advanced Materials for sensing</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7.5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-05-digital-emerging-02" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-05-DIGITAL-EMERGING-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Next-Generation AI Agents for Real-World Applications (AI/Data/Robotics)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€19m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-05-digital-emerging-03" target="_blank" rel="noopener noreferrer">HORIZON-CL4-2026-05-DIGITAL-EMERGING-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Next-Generation Agile and Intelligent Robotics Platforms for Industrial/Service Applications</td><td><span class="type-badge type-RIA">RIA</span></td><td>€12-13m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -785,8 +859,8 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-RAISE-2026-01-01</td><td class="topic-title">Thematic Networks of Excellence for AI in Science (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
-                <tr><td class="topic-id">HORIZON-RAISE-2026-01-02</td><td class="topic-title">Thematic Networks of Excellence for AI in Science – Agriculture and Environmental Pollution (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-raise-2026-01-01" target="_blank" rel="noopener noreferrer">HORIZON-RAISE-2026-01-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Thematic Networks of Excellence for AI in Science (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-raise-2026-01-02" target="_blank" rel="noopener noreferrer">HORIZON-RAISE-2026-01-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Thematic Networks of Excellence for AI in Science – Agriculture and Environmental Pollution (RAISE pilot)</td><td><span class="type-badge type-RIA">RIA</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -812,11 +886,11 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-01</td><td class="topic-title">Next generation climate monitoring and related capabilities</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-02</td><td class="topic-title">Advancing European climate risk assessments</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-03</td><td class="topic-title">Economics of climate change and cost of inaction</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4m</td><td>up to 4</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-04</td><td class="topic-title">Fighting disinformation and effectively communicating on climate change</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-07-D1-05</td><td class="topic-title">Improving climate and weather models for Africa</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-07-d1-01" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-07-D1-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Next generation climate monitoring and related capabilities</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-07-d1-02" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-07-D1-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advancing European climate risk assessments</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-07-d1-03" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-07-D1-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Economics of climate change and cost of inaction</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4m</td><td>up to 4</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-07-d1-04" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-07-D1-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Fighting disinformation and effectively communicating on climate change</td><td><span class="type-badge type-RIA">RIA</span></td><td>€4-5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-07-d1-05" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-07-D1-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Improving climate and weather models for Africa</td><td><span class="type-badge type-RIA">RIA</span></td><td>€7m</td><td>up to 3</td></tr>
               </tbody>
             </table>
           </div>
@@ -833,7 +907,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL5-2026-08-Two-Stage-D1-06</td><td class="topic-title">Closing knowledge gaps on Earth system science for global/regional assessments and climate policy</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-9m</td><td>up to 7</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-08-two-stage-d1-06" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-08-Two-Stage-D1-06<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Closing knowledge gaps on Earth system science for global/regional assessments and climate policy</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5-9m</td><td>up to 7</td></tr>
               </tbody>
             </table>
           </div>
@@ -849,12 +923,12 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-01</td><td class="topic-title">Large-scale demonstration of HD Battery Electric Vehicles for long-haul logistics (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€34m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-02</td><td class="topic-title">Energy-efficient software-defined EVs (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€16m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-07</td><td class="topic-title">AI-assisted digital aircraft design, manufacturing and MRO</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-11</td><td class="topic-title">Ports of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-12</td><td class="topic-title">Shipyards of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-05-D5-13</td><td class="topic-title">Safety of renewable waterborne fuels in port areas (ZEWT)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-01" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Large-scale demonstration of HD Battery Electric Vehicles for long-haul logistics (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€34m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-02" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Energy-efficient software-defined EVs (2ZERO)</td><td><span class="type-badge type-IA">IA</span></td><td>€16m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-07" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-07<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">AI-assisted digital aircraft design, manufacturing and MRO</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-11" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-11<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Ports of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-12" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-12<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Shipyards of the future (ZEWT Partnership)</td><td><span class="type-badge type-IA">IA</span></td><td>€10.5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-05-d5-13" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-05-D5-13<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Safety of renewable waterborne fuels in port areas (ZEWT)</td><td><span class="type-badge type-CSA">CSA</span></td><td>€2m</td><td>1</td></tr>
               </tbody>
             </table>
           </div>
@@ -871,8 +945,8 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL5-2026-06-Two-Stage-D5-10</td><td class="topic-title">Disruptive technologies for energy saving onboard long-distance ships (ZEWT)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL5-2026-06-Two-Stage-D5-19</td><td class="topic-title">Non-exhaust emissions in road and railway transport</td><td><span class="type-badge type-RIA">RIA</span></td><td>€3.5-4m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-06-two-stage-d5-10" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-06-Two-Stage-D5-10<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Disruptive technologies for energy saving onboard long-distance ships (ZEWT)</td><td><span class="type-badge type-RIA">RIA</span></td><td>€5m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl5-2026-06-two-stage-d5-19" target="_blank" rel="noopener noreferrer">HORIZON-CL5-2026-06-Two-Stage-D5-19<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Non-exhaust emissions in road and railway transport</td><td><span class="type-badge type-RIA">RIA</span></td><td>€3.5-4m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -898,20 +972,20 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-01</td><td class="topic-title">Innovative phytosanitary treatments for regulated plant pests</td><td>€5.9m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-02</td><td class="topic-title">Tackling pesticide resistance: detection, management, foresight</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-03</td><td class="topic-title">Boosting competitiveness of protein crops in Europe</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-04</td><td class="topic-title">Accelerating breeding tools for perennial crops (fruits, nuts)</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-05</td><td class="topic-title">Circularity and diversification of terrestrial livestock systems</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-06</td><td class="topic-title">Advanced solutions for controlled environment agriculture (CEA)</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-07</td><td class="topic-title">Strengthening EU plant protection ecosystem</td><td>€3m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-08</td><td class="topic-title">Sustainable management of key migratory fish species</td><td>€7m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-09</td><td class="topic-title">Sustainable diets for cardiovascular disease prevention with digital apps</td><td>€5-6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-10</td><td class="topic-title">Sustainable diets based on health status of ageing population</td><td>€2m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-11</td><td class="topic-title">Holistic microbiome research for sustainable food systems</td><td>€5-6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-12</td><td class="topic-title">Leveraging R&I knowledge on microbiome</td><td>€2m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-13</td><td class="topic-title">Plant health and reducing losses in Africa (FNSSA)</td><td>€6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-14</td><td class="topic-title">Green Transition Food Processing Africa</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Innovative phytosanitary treatments for regulated plant pests</td><td>€5.9m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Tackling pesticide resistance: detection, management, foresight</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-03" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Boosting competitiveness of protein crops in Europe</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-04" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Accelerating breeding tools for perennial crops (fruits, nuts)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-05" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Circularity and diversification of terrestrial livestock systems</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-06" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-06<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advanced solutions for controlled environment agriculture (CEA)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-07" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-07<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Strengthening EU plant protection ecosystem</td><td>€3m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-08" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-08<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Sustainable management of key migratory fish species</td><td>€7m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-09" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-09<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Sustainable diets for cardiovascular disease prevention with digital apps</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-10" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-10<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Sustainable diets based on health status of ageing population</td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-11" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-11<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Holistic microbiome research for sustainable food systems</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-12" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-12<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Leveraging R&I knowledge on microbiome</td><td>€2m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-13" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-13<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Plant health and reducing losses in Africa (FNSSA)</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-14" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-14<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Green Transition Food Processing Africa</td><td>€5-6m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -928,8 +1002,8 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-01-two-stage</td><td class="topic-title">Open topic: Improving agricultural competitiveness through efficient use of production factors</td><td>€4.5m</td><td>3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-FARM2FORK-02-two-stage</td><td class="topic-title">Open topic: Boosting organic farming for competitive, sustainable, resilient sector</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open topic: Improving agricultural competitiveness through efficient use of production factors</td><td>€4.5m</td><td>3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-FARM2FORK-02-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open topic: Boosting organic farming for competitive, sustainable, resilient sector</td><td>€6m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -945,8 +1019,8 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-CLIMATE-01</td><td class="topic-title">Effective, fair policies for climate mitigation/adaptation in agriculture and forestry</td><td>€6m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-CLIMATE-02</td><td class="topic-title">Towards the water infrastructures of the future</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-climate-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-CLIMATE-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Effective, fair policies for climate mitigation/adaptation in agriculture and forestry</td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-climate-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-CLIMATE-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Towards the water infrastructures of the future</td><td>€5m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -962,7 +1036,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-02-COMMUNITIES-01</td><td class="topic-title">Boosting sustainable competitiveness in rural areas through innovation</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-communities-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-02-COMMUNITIES-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Boosting sustainable competitiveness in rural areas through innovation</td><td>€5-6m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -978,16 +1052,16 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-01</td><td class="topic-title">Additional activities for Sustainable Blue Economy Partnership</td><td>€38m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-02</td><td class="topic-title">Social drivers in agriculture for social sustainability assessment</td><td>€5-6m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-03</td><td class="topic-title">Empowering the UN Decade of Ocean Science</td><td>€3m</td><td>up to 3</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-04</td><td class="topic-title">Supporting AllAtlantic Ocean Research and Innovation Alliance</td><td>€4.5m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-05</td><td class="topic-title">European contribution to WMO Global Greenhouse Gas Watch</td><td>€7m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-06</td><td class="topic-title">Services and business incubator for geospatial open-source</td><td>€6m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-07</td><td class="topic-title">Interconnect Earth Observation research for environmental policies</td><td>€5.4m</td><td>1</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-08</td><td class="topic-title">Boosting data availability and AI solutions in food</td><td>€7.5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-09</td><td class="topic-title">Knowledge flows to practice via EU thematic knowledge hubs</td><td>€3.5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-10</td><td class="topic-title">Innovation via on-farm demonstrations and cost-benefit analysis</td><td>€4-5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Additional activities for Sustainable Blue Economy Partnership</td><td>€38m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-02<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Social drivers in agriculture for social sustainability assessment</td><td>€5-6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-03" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-03<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Empowering the UN Decade of Ocean Science</td><td>€3m</td><td>up to 3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-04" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-04<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Supporting AllAtlantic Ocean Research and Innovation Alliance</td><td>€4.5m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-05" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">European contribution to WMO Global Greenhouse Gas Watch</td><td>€7m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-06" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-06<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Services and business incubator for geospatial open-source</td><td>€6m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-07" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-07<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Interconnect Earth Observation research for environmental policies</td><td>€5.4m</td><td>1</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-08" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-08<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Boosting data availability and AI solutions in food</td><td>€7.5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-09" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-09<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Knowledge flows to practice via EU thematic knowledge hubs</td><td>€3.5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-10" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-10<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Innovation via on-farm demonstrations and cost-benefit analysis</td><td>€4-5m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -1004,7 +1078,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-03-GOVERNANCE-01-two-stage</td><td class="topic-title">Open topic: Earth Intelligence solutions using environmental observations and AI</td><td>€6m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-03-governance-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-03-GOVERNANCE-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open topic: Earth Intelligence solutions using environmental observations and AI</td><td>€6m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -1021,10 +1095,10 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-01-two-stage</td><td class="topic-title">Living labs for co-creating solutions for ecosystem restoration</td><td>€7m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-02-two-stage</td><td class="topic-title">Open topic: Causes of species rapid decline and actionable solutions</td><td>€3m</td><td>4</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-03-two-stage</td><td class="topic-title">Unlocking citizen action for nature protection and restoration</td><td>€5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-04-two-stage</td><td class="topic-title">Mainstreaming Nature-Based Solutions for nature positive economy</td><td>€6m</td><td>3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-biodiv-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-BIODIV-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Living labs for co-creating solutions for ecosystem restoration</td><td>€7m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-biodiv-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-BIODIV-02-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open topic: Causes of species rapid decline and actionable solutions</td><td>€3m</td><td>4</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-biodiv-03" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-BIODIV-03-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Unlocking citizen action for nature protection and restoration</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-biodiv-04" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-BIODIV-04-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Mainstreaming Nature-Based Solutions for nature positive economy</td><td>€6m</td><td>3</td></tr>
               </tbody>
             </table>
           </div>
@@ -1040,7 +1114,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-BIODIV-05</td><td class="topic-title">Advancing integrated scenarios and prediction models for nature positive society</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-biodiv-05" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-BIODIV-05<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Advancing integrated scenarios and prediction models for nature positive society</td><td>€5m</td><td>2</td></tr>
               </tbody>
             </table>
           </div>
@@ -1057,8 +1131,8 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-CIRCBIO-01-two-stage</td><td class="topic-title">Deploying circular solutions through living labs in cities and regions (CCRI)</td><td>€5m</td><td>2</td></tr>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-CIRCBIO-02-two-stage</td><td class="topic-title">Open topic: CCRI to strengthen urban manufacturing for Clean Industrial Deal</td><td>€6m</td><td>3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-circbio-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-CIRCBIO-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Deploying circular solutions through living labs in cities and regions (CCRI)</td><td>€5m</td><td>2</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-circbio-02" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-CIRCBIO-02-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Open topic: CCRI to strengthen urban manufacturing for Clean Industrial Deal</td><td>€6m</td><td>3</td></tr>
               </tbody>
             </table>
           </div>
@@ -1075,7 +1149,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Budget/Project</th><th>Projects</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-CL6-2026-01-ZEROPOLLUTION-01-two-stage</td><td class="topic-title">Decontaminate and bioremediate aquatic pollution</td><td>€7-8m</td><td>3</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-01-zeropollution-01" target="_blank" rel="noopener noreferrer">HORIZON-CL6-2026-01-ZEROPOLLUTION-01-two-stage<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">Decontaminate and bioremediate aquatic pollution</td><td>€7-8m</td><td>3</td></tr>
               </tbody>
             </table>
           </div>
@@ -1099,7 +1173,7 @@ a:hover { color: var(--color-primary-hover); }
             <table class="topics-table">
               <thead><tr><th>Topic ID</th><th>Title</th><th>Type</th><th>Deadline</th></tr></thead>
               <tbody>
-                <tr><td class="topic-id">HORIZON-MSCA-2026-SE-01-01</td><td class="topic-title">MSCA Staff Exchanges 2026</td><td><span class="type-badge type-MSCA-SE">MSCA-SE</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
+                <tr><td class="topic-id"><a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-msca-2026-se-01-01" target="_blank" rel="noopener noreferrer">HORIZON-MSCA-2026-SE-01-01<svg class="link-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3H3v10h10v-3M9 2h5v5M14 2L7 9"/></svg></a></td><td class="topic-title">MSCA Staff Exchanges 2026</td><td><span class="type-badge type-MSCA-SE">MSCA-SE</span></td><td class="deadline-tag">15 Apr 2026</td></tr>
               </tbody>
             </table>
           </div>
@@ -1263,7 +1337,7 @@ a:hover { color: var(--color-primary-hover); }
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="container">
-    <p>Prepared by <strong><a href="https://www.global-disruption.com" target="_blank" rel="noopener noreferrer">Global Disruption</a></strong> · Kristjan Zemljič · EU Grant Engineer · March 2026</p>
+    <p>Prepared by <strong><a href="https://global-disruption.com" target="_blank" rel="noopener noreferrer">Global Disruption</a></strong> · Kristjan Zemljič · EU Grant Engineer · March 2026</p>
     <p>Data sourced from <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/calls-for-proposals" target="_blank" rel="noopener noreferrer">EU Funding & Tenders Portal</a> and European Commission work programmes 2025–27.</p>
     <p>Additional sources: <a href="https://hadea.ec.europa.eu/news/horizon-europe-2026-industry-calls-now-published-2025-12-19_en" target="_blank" rel="noopener noreferrer">HADEA Industry Calls</a> · <a href="https://hadea.ec.europa.eu/news/horizon-europe-2026-digital-calls-now-published-2026-01-14_en" target="_blank" rel="noopener noreferrer">HADEA Digital Calls</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-2026-27-digital-industry-and-space-cluster-4/" target="_blank" rel="noopener noreferrer">IUK CL4</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-2026-27-climate-energy-and-mobility-cluster-5/" target="_blank" rel="noopener noreferrer">IUK CL5</a> · <a href="https://iuk-business-connect.org.uk/opportunities/horizon-europe-food-bioeconomy-natural-resources-agriculture-and-environment-cluster-6/" target="_blank" rel="noopener noreferrer">IUK CL6</a></p>
   </div>
@@ -1373,12 +1447,12 @@ function getChartColors() {
     text: isDark ? '#e2e8f0' : '#1a202c',
     muted: isDark ? '#8b99ad' : '#64748b',
     grid: isDark ? 'rgba(42,53,68,0.5)' : 'rgba(209,217,224,0.5)',
-    teal: isDark ? '#01969e' : '#01696f',
-    terra: isDark ? '#c17a50' : '#964219',
+    teal: isDark ? '#483D8B' : '#362E6B',
+    terra: isDark ? '#FF9739' : '#D47A20',
     olive: isDark ? '#7a9a5a' : '#5a7a3a',
     blue: isDark ? '#5591c7' : '#006494',
     gold: isDark ? '#e8af34' : '#d19900',
-    purple: isDark ? '#a86fdf' : '#7a39bb',
+    purple: isDark ? '#8B7FCC' : '#6A5CAD',
   };
 }
 
