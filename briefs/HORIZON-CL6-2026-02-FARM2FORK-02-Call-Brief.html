@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Intelligence Brief — HORIZON-CL6-2026-02-FARM2FORK-02</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--eu-blue:#362E6B;--eu-blue-light:#6A5CAD;--eu-gold:#D47A20;--eu-gold-soft:rgba(212,122,32,0.08);--accent:#e8491d;--bg:#f0f2f5;--bg-card:#fff;--bg-highlight:rgba(54,46,107,0.06);--text:#2d3748;--text-mid:#5a6577;--text-light:#8a8f9f;--border:#e0e0e8;--border-light:#efefef;--purple:#9c27b0;--purple-soft:#f3e5f5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Helvetica Neue',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.7;font-weight:400}
+strong,b{font-weight:600;color:var(--text)}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.hero{background:linear-gradient(135deg,var(--eu-blue) 0%,#1F1A40 60%,#0d0a1a 100%);color:#fff;padding:56px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(212,122,32,0.12),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--eu-gold),#D47A20,var(--eu-gold))}
+.hero-inner{max-width:900px;margin:0 auto;padding:0 32px}
+.hero-label{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);padding:6px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:28px;font-weight:400;line-height:1.3;margin-bottom:8px}
+.hero h1 span{color:#D47A20}
+.hero .topic-code{font-family:'JetBrains Mono',monospace;font-size:15px;color:rgba(255,255,255,.6);margin-bottom:14px;display:block}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:28px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:24px}
+.hero-meta-item{display:flex;flex-direction:column;gap:2px}
+.hero-meta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-meta-value{font-family:'Inter','Helvetica Neue',sans-serif;font-size:17px;font-weight:600}
+.hero-meta-value.highlight{color:#D47A20}
+.glance{margin-top:-30px;position:relative;z-index:1}
+.glance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.glance-item{background:var(--bg-card);padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.glance-item-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light)}
+.glance-item-value{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);line-height:1.35}
+.glance-item-note{font-size:11.5px;color:var(--text-light);line-height:1.4}
+section{padding:48px 0 32px}
+.section-number{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--eu-blue);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px}
+section h2{font-family:'DM Serif Display',Georgia,serif;font-size:24px;font-weight:400;color:var(--text);margin-bottom:6px}
+.section-lead{color:var(--text-mid);font-size:15px;margin-bottom:28px;font-style:italic}
+section h3{font-family:'DM Serif Display',Georgia,serif;font-size:18px;font-weight:400;color:var(--text);margin:28px 0 12px}
+section p{margin-bottom:14px}
+.divider{height:1px;background:var(--border);margin:0}
+.signal-list{display:flex;flex-direction:column;gap:16px;margin:20px 0}
+.signal{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px 24px 24px 48px;position:relative;transition:box-shadow .2s,border-color .2s}
+.signal:hover{box-shadow:0 4px 16px rgba(54,46,107,0.08);border-color:var(--eu-blue-light)}
+.signal-num{position:absolute;top:16px;left:14px;font-family:'DM Serif Display',Georgia,serif;font-size:32px;font-weight:400;color:var(--eu-blue);opacity:.08}
+.signal-title{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);margin-bottom:8px}
+.signal-body{font-size:14px;color:var(--text-mid);line-height:1.6}
+.signal-body strong{color:var(--text);font-weight:600}
+.source-ref{font-size:12px;color:var(--text-light);margin-top:-4px;padding-left:12px;border-left:2px solid var(--border-light);margin-bottom:14px}
+.callout{border-left:4px solid var(--eu-blue);background:var(--bg-highlight);padding:18px 22px;border-radius:0 8px 8px 0;margin:18px 0;font-size:14px}
+.callout.gold{border-left-color:var(--eu-gold);background:var(--eu-gold-soft)}
+.callout.warn{border-left-color:var(--accent);background:#fef3f0}
+.callout.interpretation{border-left-color:var(--purple);background:var(--purple-soft)}
+.interpretation-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px;font-weight:500}
+.interpretation-note{font-size:13px;color:var(--text-mid);font-style:italic;margin-top:8px}
+.callout strong{color:var(--text);font-weight:600}
+.table-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{background:var(--eu-blue);color:#fff;font-size:13px;font-weight:500;padding:10px 14px;text-align:left}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border-light);vertical-align:top}
+tbody tr:nth-child(even){background:rgba(0,51,153,.015)}
+tbody tr:hover{background:rgba(0,51,153,.03)}
+tbody td:first-child{font-weight:500;color:var(--text)}
+.status-red{color:#d32f2f;font-weight:600}
+.status-amber{color:#f57c00;font-weight:600}
+.status-green{color:#388e3c;font-weight:600}
+.score-grid{display:flex;flex-direction:column;gap:12px;margin:18px 0}
+.score-row{display:grid;grid-template-columns:180px 1fr 60px 60px;align-items:center;gap:12px}
+.score-label{font-weight:500;font-size:14px}
+.score-bar-wrap{background:var(--border-light);border-radius:6px;height:28px;overflow:hidden}
+.score-bar{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600}
+.score-bar.excellence{background:linear-gradient(135deg,var(--eu-blue),var(--eu-blue-light));width:33.3%}
+.score-bar.impact{background:linear-gradient(135deg,var(--eu-blue),#6A5CAD);width:33.3%}
+.score-bar.implementation{background:linear-gradient(135deg,var(--eu-gold),#e8891a);width:33.3%}
+.score-min{font-size:12px;color:var(--text-light);text-align:right}
+.score-max{font-size:12px;color:var(--text-mid);font-weight:600}
+.partner-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:18px 0}
+.partner-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px}
+.partner-card h4{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);margin-bottom:12px}
+.partner-card ul{list-style:none;padding:0}
+.partner-card li{font-size:14px;color:var(--text-mid);padding:4px 0 4px 20px;position:relative}
+.partner-card li::before{content:'→';position:absolute;left:0;color:var(--eu-blue);font-weight:600}
+.checklist{margin:18px 0}
+.checklist-group{margin-bottom:24px}
+.checklist-group h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--eu-blue);padding-bottom:8px;border-bottom:2px solid var(--eu-blue);margin-bottom:14px}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:14px;color:var(--text-mid)}
+.check-box{width:18px;height:18px;min-width:18px;border:2px solid var(--border);border-radius:4px;margin-top:2px}
+.outcomes-list{margin:14px 0;padding:0;list-style:none;counter-reset:outcome}
+.outcomes-list li{counter-increment:outcome;padding:12px 16px 12px 44px;position:relative;background:var(--bg-card);border:1px solid var(--border-light);border-radius:6px;margin-bottom:8px;font-size:14px;line-height:1.55}
+.outcomes-list li::before{content:'EO' counter(outcome);position:absolute;left:12px;top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--eu-gold);font-weight:500;letter-spacing:.5px}
+.footer{background:#0a0a1a;color:rgba(255,255,255,.6);padding:40px 32px;text-align:center;font-size:13px;line-height:1.7;margin-top:48px}
+.footer strong{color:rgba(255,255,255,.85)}
+.order-cta{display:block;background:linear-gradient(135deg,#D47A20,#e8891a);border-radius:10px;padding:20px 28px;text-align:center;text-decoration:none;margin:32px 0;transition:box-shadow .2s,transform .2s}
+.order-cta:hover{box-shadow:0 6px 24px rgba(212,122,32,0.25);transform:translateY(-1px)}
+.order-cta-text{font-size:15px;font-weight:600;color:#fff}
+.order-cta-sub{font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+@media(max-width:700px){.hero{padding:32px 0 56px}.hero-inner,.container{padding:0 16px}.hero h1{font-size:22px}.hero-meta{flex-direction:column;gap:12px}.score-row{grid-template-columns:1fr}.signal{padding-left:24px}.signal-num{display:none}}
+@media print{.signal:hover,tbody tr:hover{box-shadow:none}body{font-size:12px}.hero{padding:24px 0 40px}.order-cta{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Horizon Europe · Call Intelligence Brief</div>
+    <h1>Tackling pesticide resistance: <span>early detection, management strategies, and foresight</span></h1>
+    <span class="topic-code">HORIZON-CL6-2026-02-FARM2FORK-02</span>
+    <p class="hero-sub">Everything you need to decide whether to apply — and how to win.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Deadline</span>
+        <span class="hero-meta-value highlight">14 April 2026 · 17:00 Brussels</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Total Budget</span>
+        <span class="hero-meta-value">€12,000,000</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Instrument</span>
+        <span class="hero-meta-value">RIA · 100% funding</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Stage</span>
+        <span class="hero-meta-value">Single-stage</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 0: VERIFIED FACTS ===== -->
+<div class="container">
+  <div class="glance">
+    <div class="glance-grid">
+      <div class="glance-item">
+        <span class="glance-item-label">Topic Code</span>
+        <span class="glance-item-value">HORIZON-CL6-2026-02-FARM2FORK-02</span>
+        <span class="glance-item-note">F&T Portal, topic page header</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Call Identifier</span>
+        <span class="glance-item-value">HORIZON-CL6-2026-02</span>
+        <span class="glance-item-note">F&T Portal: "Call 02 - single stage (2026)"</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Instrument</span>
+        <span class="glance-item-value">HORIZON-RIA</span>
+        <span class="glance-item-note">F&T Portal, "Type of action"</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Budget Model</span>
+        <span class="glance-item-value">Lump Sum</span>
+        <span class="glance-item-note">F&T Portal, "Type of MGA": HORIZON Lump Sum Grant [HORIZON-AG-LS]</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Funding Rate</span>
+        <span class="glance-item-value">100%</span>
+        <span class="glance-item-note">General Annexes, Annex G — RIA = 100%</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Page Limit (Part B)</span>
+        <span class="glance-item-value">45 pages</span>
+        <span class="glance-item-note">RIA + lump sum = 45pp (General Annexes 2026-2027, Annex A)</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Evaluation Thresholds</span>
+        <span class="glance-item-value">3 / 3 / 3 · cum. 10</span>
+        <span class="glance-item-note">STANDARD — no topic-specific override in section 5b</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Expected Projects</span>
+        <span class="glance-item-value">[NOT STATED]</span>
+        <span class="glance-item-note">Not stated in topic conditions or WP text</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Destination</span>
+        <span class="glance-item-value" style="font-size:13px;">Fair, healthy and environment-friendly food systems from primary production to consumption (2026-27)</span>
+        <span class="glance-item-note">F&T Portal, Destination section</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Cluster / Pillar</span>
+        <span class="glance-item-value">Cluster 6 — Food, Bioeconomy, Natural Resources / Pillar II</span>
+        <span class="glance-item-note">WP Part 9</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">China Eligibility</span>
+        <span class="glance-item-value" style="color: #388e3c;">ELIGIBLE ✓</span>
+        <span class="glance-item-note">No destination-level exclusion for CL6</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Multi-Actor Approach</span>
+        <span class="glance-item-value" style="color: #d32f2f;">MANDATORY ⚠</span>
+        <span class="glance-item-note">Eligibility criterion — section 3, "Other Eligible Conditions"</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:24px 0 12px;">
+    <p style="font-size:13px;color:var(--text-light);">
+      <strong>Verify these facts:</strong> <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl6-2026-02-farm2fork-02" target="_blank" style="color:var(--eu-blue);">Topic page on F&T Portal</a><br>
+      Source documents: General Annexes 2026-2027, WP Part 9 — Food, Bioeconomy, Natural Resources, Agriculture and Environment<br>
+      <em>If any fact above doesn't match the Portal, this brief may be outdated. Check the F&T Portal directly.</em>
+    </p>
+  </div>
+
+  <div class="callout warn" style="margin-top:20px;">
+    <strong>CRITICAL: Multi-actor approach is an ELIGIBILITY CRITERION.</strong> This is listed under section 3 "Other Eligible Conditions" — not just a recommendation. Proposals that fail to implement the multi-actor approach will be rejected before evaluation, regardless of quality. This is the single biggest compliance trap for this topic.
+  </div>
+  <p class="source-ref">Source: "The following additional eligibility criteria apply: the proposals must apply the multi-actor approach." — Topic conditions, section 3</p>
+
+  <h3 style="margin-top:32px;">Expected Outcomes</h3>
+  <p style="font-size:13px;color:var(--text-mid);margin-bottom:8px;">(Topic text, Expected Outcomes section — verbatim):</p>
+
+  <ol class="outcomes-list">
+    <li>A holistic and science-based approach to tackling pesticide resistance is developed, providing actionable recommendations to improve crop protection strategies and support evidence-based decision-making at all levels.</li>
+    <li>Farmers, advisors, and practitioners are empowered with knowledge, tools, and integrated strategies—including innovative environmentally friendly and sustainable alternatives that promote agrobiodiversity—supported by data-driven approaches and robust monitoring systems.</li>
+    <li>Foresight capacities are enhanced, enabling the anticipation of resistance trends and supporting long-term planning to strengthen the resilience and sustainability of agricultural systems.</li>
+  </ol>
+</div>
+
+<div class="divider" style="margin-top:32px;"></div>
+
+<!-- ===== SECTION 1: CALL DECODER ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">01</span>
+    <h2>Call Decoder</h2>
+    <p class="section-lead">What the EC actually wants — decoded from the topic text.</p>
+
+    <h3>1.1 Strategic Signals</h3>
+
+    <div class="signal-list">
+      <div class="signal">
+        <span class="signal-num">1</span>
+        <div class="signal-title">This is a systems problem, not a technology problem</div>
+        <div class="signal-body">The topic frames pesticide resistance as a <strong>systemic challenge requiring system-level transformation</strong>. It explicitly states that pesticides are short-term solutions and that long-term answers require shifts in farming practices. Proposals that pitch a single detection tool or one new biopesticide will miss the mark. The EC wants an integrated approach covering detection + management + foresight + capacity building.</div>
+      </div>
+      <p class="source-ref">Source: "while pesticides are important short-term solutions, the long-term solutions require shifts in current agriculture or forestry practices and system-level transformations within agri-food systems" — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">2</span>
+        <div class="signal-title">Six mandatory activities — the scope is a checklist</div>
+        <div class="signal-body">The topic uses "Proposals should:" followed by six specific activities. While "should" is softer than "must," missing any of these will create a visible gap against the scope: (1) <strong>map resistance risks</strong>, (2) <strong>develop early detection + predictive modelling</strong> (including AI), (3) <strong>design IPWM strategies</strong>, (4) <strong>innovate post-harvest practices</strong>, (5) <strong>support foresight activities</strong>, and (6) <strong>enhance capacity-building and stakeholder engagement</strong>. All six should be visible in your work plan.</div>
+      </div>
+      <p class="source-ref">Source: "Proposals should: map resistance risks [...] develop early detection methods [...] design and evaluate innovative integrated pest and weed management (IPWM) strategies [...] innovate storage and handling practices [...] support foresight activities [...] enhance capacity-building" — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">3</span>
+        <div class="signal-title">Climate change is the accelerator — not a side topic</div>
+        <div class="signal-body">Climate change appears in the problem framing, not just as context. It's described as the force that enables pests to survive, expand, and develop resistance faster. Proposals should integrate climate projections into their resistance modelling — not treat climate as a "cross-cutting" afterthought in one paragraph.</div>
+      </div>
+      <p class="source-ref">Source: "Climate change compounds this issue by enabling pests to survive milder winters, expand their ranges, and increase their exposure to pesticides—accelerating the development of resistance." — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">4</span>
+        <div class="signal-title">AI is explicitly invited — but as a tool, not a topic</div>
+        <div class="signal-body">The scope names <strong>"AI-driven approaches"</strong> as part of predictive modelling and <strong>"advanced technologies for precise and targeted pesticide use."</strong> This signals that proposals with AI/digital components will align well with the text — but the topic is about pesticide resistance, not about AI. The technology must serve the agricultural problem.</div>
+      </div>
+      <p class="source-ref">Source: "develop early detection methods and predictive modelling (including AI-driven approaches) to anticipate and monitor the evolution of pesticide resistance" — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">5</span>
+        <div class="signal-title">Must build on existing work — not start from scratch</div>
+        <div class="signal-body">The topic explicitly requires capitalising on past and ongoing projects and considering international resistance management committees. Proposals that ignore existing Horizon 2020/Europe projects on IPM, resistance monitoring, or agroecology will lose points on Excellence for poor state-of-the-art positioning.</div>
+      </div>
+      <p class="source-ref">Source: "Proposals should capitalise on relevant research findings, knowledge, solutions and tools, from past and ongoing projects [...] proposals should consider the activities of international committees on pesticide resistance management." — Topic scope</p>
+    </div>
+
+    <h3>1.2 Scope Boundaries</h3>
+
+    <div class="callout">
+      <strong>IN SCOPE</strong> (directly from topic text):
+      <ul style="margin:8px 0 0 16px;font-size:14px;">
+        <li>Agriculture AND forestry — both explicitly mentioned</li>
+        <li>Pre-harvest AND post-harvest stages — storage/handling innovation required</li>
+        <li>Chemical AND non-chemical approaches — agroecological farming practices</li>
+        <li>Detection, management, AND foresight — all three pillars required</li>
+        <li>Pests defined broadly: any species/strain/biotype injurious to plants (EU Regulation 2016/2031)</li>
+      </ul>
+    </div>
+
+    <div class="callout interpretation">
+      <span class="interpretation-label">Our Reading</span>
+      <p><strong>Based on:</strong> The €12M total budget, the RIA instrument, and the breadth of the six "should" activities.</p>
+      <p>At €12M with projects typically €4-6M for CL6 RIAs, we expect 2-3 projects funded. The scope is broad enough that different consortia could emphasise different crops, pest types, or geographic zones without overlapping. A consortium covering multiple crop systems across different EU climate zones would demonstrate the systemic approach the topic demands.</p>
+      <p class="interpretation-note">This is a strategic interpretation based on budget arithmetic and scope breadth. Assess whether it matches your consortium's profile.</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 2: COMPLIANCE MATRIX ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">02</span>
+    <h2>Compliance Matrix</h2>
+    <p class="section-lead">What kills your proposal before evaluation.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Status</th><th>Gate</th><th>Rule</th><th>Your Check</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Multi-actor approach</td>
+            <td>MANDATORY eligibility criterion. Proposals must implement the multi-actor approach as defined in this WP part.</td>
+            <td>Include farmers, advisors, researchers, industry, policymakers. Name them in the consortium or as associated partners. Describe co-creation, not just dissemination.</td>
+          </tr>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Lump sum budget table</td>
+            <td>Mandatory Excel budget table (HORIZON Lump Sum Grant). If purchase costs >15% of personnel costs per participant, justify in "Any comments" sheet.</td>
+            <td>Download "Detailed budget table (HE LS)" from submission system. Read the 17 Feb 2026 topic update.</td>
+          </tr>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Consortium minimum</td>
+            <td>Min. 3 independent legal entities from 3 different EU MS or Associated Countries (General Annex B, RIA)</td>
+            <td>Standard RIA minimum. In practice, the multi-actor + systems approach requires more partners.</td>
+          </tr>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Page limit</td>
+            <td>45 pages for Part B (RIA + lump sum, General Annexes Annex A)</td>
+            <td>More room than a CSA (28pp) but still tight for 6 scope activities + multi-actor + foresight.</td>
+          </tr>
+          <tr>
+            <td><span class="status-amber">🟡 IMPORTANT</span></td>
+            <td>Lump sum cost justification</td>
+            <td>Topic update (17 Feb 2026): if purchase costs exceed 15% of personnel costs per participant, justify in "Any comments" sheet</td>
+            <td>This was a February 2026 update. Many applicants will miss it.</td>
+          </tr>
+          <tr>
+            <td><span class="status-amber">🟡 IMPORTANT</span></td>
+            <td>Build on existing work</td>
+            <td>Topic requires capitalising on past/ongoing projects and international resistance committees</td>
+            <td>Not a hard eligibility gate, but failing this weakens Excellence significantly. Map relevant H2020/HE projects.</td>
+          </tr>
+          <tr>
+            <td><span class="status-green">🟢 NOTE</span></td>
+            <td>China eligibility</td>
+            <td>No destination-level exclusion for CL6 — Chinese entities eligible</td>
+            <td>Standard General Annex B rules apply</td>
+          </tr>
+          <tr>
+            <td><span class="status-green">🟢 NOTE</span></td>
+            <td>Gender Equality Plan</td>
+            <td>Required for public bodies, HEIs, and research organisations (General Annex B)</td>
+            <td>Confirm GEP status for all academic/research partners</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <strong>TRAP: Weak multi-actor implementation.</strong> Many proposals mention "we will involve farmers in dissemination workshops" and call it multi-actor. That's not enough. The multi-actor approach requires co-creation from project design through implementation. Farmers, advisors, and practitioners should appear in the work plan as active contributors — not as passive audiences for results.
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta">
+    <div class="order-cta-text">Need this analysis for YOUR topic? Request a Decision Brief — €79</div>
+    <div class="order-cta-sub">112 Horizon Europe topics covered · Delivered within 1 working day</div>
+  </a>
+</div>
+
+<!-- ===== SECTION 3: SCORING PLAYBOOK ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">03</span>
+    <h2>Scoring Playbook</h2>
+    <p class="section-lead">How to score well on each criterion — for this specific RIA topic.</p>
+
+    <div class="callout gold">
+      <strong>Scoring overview:</strong> 3 criteria, each scored 0–5 in half-point steps. Standard thresholds: 3 per criterion, 10 overall. For RIA, all criteria have equal weight in ranking. Tiebreaker: Excellence first, then Impact. (Source: General Annex D, WP 2026-2027)
+    </div>
+
+    <div class="score-grid">
+      <div class="score-row">
+        <span class="score-label">Excellence</span>
+        <div class="score-bar-wrap"><div class="score-bar excellence">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Impact</span>
+        <div class="score-bar-wrap"><div class="score-bar impact">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Implementation</span>
+        <div class="score-bar-wrap"><div class="score-bar implementation">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+    </div>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">EXCELLENCE</h4>
+    <p style="font-size:13px;color:var(--text-light);">RIA sub-criteria from General Annex D: clarity/pertinence of objectives, soundness of methodology, ambition/novelty.</p>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> Objectives clearly mapped to all 3 expected outcomes (holistic approach, farmer empowerment, foresight capacity). Methodology must cover all 6 scope activities — not cherry-pick 3 and ignore the rest. Novelty lies in the integration: connecting early detection → management → foresight into a coherent system, not just advancing individual components. State-of-the-art must reference existing H2020/HE IPM projects and international resistance committees — the topic explicitly requires this.
+    </div>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">IMPACT</h4>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> Demonstrate how actionable recommendations reach farmers, not just academic journals. EO1 demands recommendations that improve crop protection strategies — show the pathway from research to on-farm practice change. The multi-actor approach is your vehicle for impact credibility: if real farmers, advisors, and industry are co-creating the solutions, the adoption pathway is built-in. Alignment with CAP, Sustainable Use of Pesticides Directive, and the Vision for Agriculture strengthens policy impact.
+    </div>
+    <p class="source-ref">Source: Topic explicitly references CAP objectives, Sustainable Use of Pesticides Directive, Vision for Agriculture and Food, and the Biotechnology Communication. — Topic scope, policy alignment paragraph</p>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">IMPLEMENTATION</h4>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> WP structure that maps to the 6 scope activities — evaluators should see each activity reflected in the work plan. Multi-actor approach must be visible in the management structure: an advisory board with farmers is not enough — show co-design mechanisms. The lump sum budget must be credible and proportionate. Risk register should address: farmer recruitment/retention across growing seasons, resistance evolution outpacing the project timeline, and data sharing across sites/countries.
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 4: CONSORTIUM BLUEPRINT ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">04</span>
+    <h2>Consortium Blueprint</h2>
+    <p class="section-lead">Who you need — the multi-actor approach demands a specific mix.</p>
+
+    <div class="callout">
+      <strong>Minimum consortium:</strong> 3 independent legal entities from 3 EU MS or Associated Countries (General Annex B, RIA). In practice, the mandatory multi-actor approach + 6 scope activities require a larger consortium with diverse actor types.
+    </div>
+
+    <div class="partner-cols">
+      <div class="partner-card">
+        <h4>Research & Science</h4>
+        <ul>
+          <li>Entomology / plant pathology / weed science research groups</li>
+          <li>AI / predictive modelling for agriculture</li>
+          <li>Agroecology / integrated pest management specialists</li>
+          <li>Foresight / futures research institutions</li>
+        </ul>
+      </div>
+      <div class="partner-card">
+        <h4>Practice & Industry</h4>
+        <ul>
+          <li>Farmer organisations / cooperatives (multi-actor core)</li>
+          <li>Advisory services / extension bodies</li>
+          <li>Agri-tech SMEs (precision agriculture, monitoring tools)</li>
+          <li>Crop protection industry (for resistance data access)</li>
+        </ul>
+        <p class="source-ref" style="margin-top:8px;">Source: "Service to industry and SMEs including spinoffs and startups" + mandatory multi-actor approach</p>
+      </div>
+      <div class="partner-card">
+        <h4>Policy & Coordination</h4>
+        <ul>
+          <li>National plant protection organisations</li>
+          <li>International resistance management bodies (IRAC, FRAC, HRAC)</li>
+          <li>Living lab or innovation hub in agriculture</li>
+        </ul>
+        <p class="source-ref" style="margin-top:8px;">Source: "proposals should consider the activities of international committees on pesticide resistance management" — Topic scope</p>
+      </div>
+    </div>
+
+    <h3>Who's In, Who's Out</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Entity / Country</th><th>Status</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>China</td>
+            <td><span class="status-green">ELIGIBLE ✓</span></td>
+            <td>No CL6 destination exclusion — standard rules apply</td>
+          </tr>
+          <tr>
+            <td>Russia / Belarus</td>
+            <td><span class="status-red">EXCLUDED</span></td>
+            <td>Standing EU Council sanctions — all instruments</td>
+          </tr>
+          <tr>
+            <td>UK, Switzerland</td>
+            <td><span class="status-green">ELIGIBLE</span></td>
+            <td>Associated Countries — standard rules</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta">
+    <div class="order-cta-text">Get this level of analysis for any April 2026 topic — €79</div>
+    <div class="order-cta-sub">Compliance traps · Scoring playbook · Consortium blueprint · All sourced</div>
+  </a>
+</div>
+
+<!-- ===== SECTION 5: POSITIONING GUIDE ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">05</span>
+    <h2>Topic Positioning Guide</h2>
+    <p class="section-lead">How to frame your idea for this specific topic.</p>
+
+    <h3>Destination Context</h3>
+    <p>This topic sits under Destination <strong>"Fair, healthy and environment-friendly food systems from primary production to consumption"</strong> in Cluster 6. The destination is driven by the Vision for Agriculture and Food, the Strategic Dialogue on Agriculture, and the Green Deal.</p>
+
+    <div class="signal-list">
+      <div class="signal">
+        <span class="signal-num">1</span>
+        <div class="signal-title">Frame resistance as a competitiveness issue, not just an environmental one</div>
+        <div class="signal-body">The destination text emphasises <strong>long-term competitiveness and sustainability</strong> of farming. Resistance directly threatens both: fewer effective products = higher costs = lower yields. Framing your proposal as defending European agricultural competitiveness, not just reducing pesticide use, aligns with the destination's dual mandate.</div>
+      </div>
+      <p class="source-ref">Source: "ensure the long-term competitiveness and sustainability of our farming, fisheries, aquaculture and food sector within the boundaries of our planet" — Destination text</p>
+
+      <div class="signal">
+        <span class="signal-num">2</span>
+        <div class="signal-title">Include forestry — most competitors will focus only on agriculture</div>
+        <div class="signal-body">The topic scope mentions <strong>"agriculture and forestry"</strong> throughout. Most consortia will be agriculture-focused. Including forestry pest resistance in your scope is a differentiator that shows you read the topic carefully and addresses an underserved dimension.</div>
+      </div>
+      <p class="source-ref">Source: "Agriculture and forestry face a growing challenge from the dual threat [...]" — Topic scope, opening sentence</p>
+
+      <div class="signal">
+        <span class="signal-num">3</span>
+        <div class="signal-title">Post-harvest is easy to overlook — don't skip it</div>
+        <div class="signal-body">Activity 4 requires innovating <strong>storage and handling practices to reduce resistance pressure during post-harvest stages</strong>. This is the most specific and least obvious of the six activities. Addressing it seriously (not as one paragraph in a 45-page proposal) shows evaluators your consortium covers the full scope.</div>
+      </div>
+      <p class="source-ref">Source: "innovate storage and handling practices to reduce resistance pressure during post-harvest stages" — Topic scope, activity 4</p>
+    </div>
+
+    <h3>Cross-Cutting Alignment</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Priority</th><th>Referenced?</th><th>How to Address</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Multi-actor approach</td>
+            <td><span class="status-red">MANDATORY</span></td>
+            <td>Eligibility criterion. Farmers, advisors, practitioners in co-creation roles throughout — not just an advisory board.</td>
+          </tr>
+          <tr>
+            <td>Biodiversity</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>"innovative environmentally friendly and sustainable alternatives that promote agrobiodiversity" — EO2</td>
+          </tr>
+          <tr>
+            <td>AI / Digital</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>"AI-driven approaches" for predictive modelling + "advanced technologies for precise and targeted pesticide use"</td>
+          </tr>
+          <tr>
+            <td>Climate adaptation</td>
+            <td><span class="status-green">YES — core framing</span></td>
+            <td>Climate change as the accelerator of resistance — integrate climate projections into modelling</td>
+          </tr>
+          <tr>
+            <td>CAP alignment</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>Topic references CAP specific objectives, Sustainable Use of Pesticides Directive, Nature Restoration Regulation</td>
+          </tr>
+          <tr>
+            <td>Biotechnology</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>"support the Commission Communication on: Building the future with nature: Boosting Biotechnology" — scope</td>
+          </tr>
+          <tr>
+            <td>Open Science / FAIR data</td>
+            <td><span class="status-amber">NOT EXPLICIT</span></td>
+            <td>Not mentioned in topic. Standard HE requirements apply — DMP commitment sufficient.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Red Flags</h3>
+
+    <div class="callout warn">
+      <strong>Red Flag 1: Single-pest or single-crop focus.</strong> The topic asks for a systemic approach covering multiple resistance mechanisms across crops. A proposal focused entirely on fungicide resistance in wheat, for example, is too narrow for this scope. Cover multiple pest types (insects, weeds, fungi) and crop/forest systems.
+    </div>
+    <div class="callout warn">
+      <strong>Red Flag 2: Missing the foresight pillar.</strong> EO3 is entirely about foresight — anticipating trends, long-term planning, scenario assessment. This is not an afterthought WP. If your consortium has no foresight capability, you're missing one of the three expected outcomes.
+    </div>
+    <div class="callout warn">
+      <strong>Red Flag 3: Ignoring international resistance committees.</strong> The topic explicitly asks you to consider IRAC, FRAC, HRAC and similar bodies. Not referencing them signals you haven't read the scope carefully — and evaluators notice.
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 6: QUICK-START CHECKLIST ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">06</span>
+    <h2>Quick-Start Checklist</h2>
+    <p class="section-lead">Your action plan — work backwards from 14 April 2026.</p>
+
+    <div class="checklist">
+      <div class="checklist-group">
+        <h4>Documents to Gather</h4>
+        <div class="check-item"><div class="check-box"></div>WP Part 9 — Food, Bioeconomy, Natural Resources (2026-2027)</div>
+        <div class="check-item"><div class="check-box"></div>Standard Application Form (HE RIA, IA) from topic submission page</div>
+        <div class="check-item"><div class="check-box"></div>Detailed budget table (HE LS) — lump sum Excel template</div>
+        <div class="check-item"><div class="check-box"></div>General Annexes 2026-2027</div>
+        <div class="check-item"><div class="check-box"></div>Multi-actor approach definition from WP Part 9</div>
+        <div class="check-item"><div class="check-box"></div>Read the Topic Update from 17 Feb 2026 — lump sum justification rules changed</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Consortium Building (now — Week -3)</h4>
+        <div class="check-item"><div class="check-box"></div>Confirm at least 3 entities from 3 EU MS/AC (RIA minimum)</div>
+        <div class="check-item"><div class="check-box"></div>Recruit farmer organisations / cooperatives (multi-actor MANDATORY)</div>
+        <div class="check-item"><div class="check-box"></div>Secure agricultural advisory / extension partner</div>
+        <div class="check-item"><div class="check-box"></div>Include foresight / futures research capability</div>
+        <div class="check-item"><div class="check-box"></div>Consider forestry partner (differentiator — most will ignore this)</div>
+        <div class="check-item"><div class="check-box"></div>Engage with IRAC / FRAC / HRAC or equivalent committees</div>
+        <div class="check-item"><div class="check-box"></div>Check Partner Search announcements on F&T Portal (84 published — high competition)</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Proposal Timeline (deadline: 14 April 2026)</h4>
+        <div class="check-item"><div class="check-box"></div><strong>By ~20 March:</strong> Consortium confirmed, concept note with all 6 scope activities mapped</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~28 March:</strong> Start writing Part B (45 pages — plan multi-actor sections early)</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~5 April:</strong> First draft + lump sum budget table complete</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~10 April:</strong> Internal review. Check multi-actor implementation. Check "Any comments" sheet.</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~12 April:</strong> Portal submission, PDF + Excel upload verification</div>
+        <div class="check-item"><div class="check-box"></div><strong>14 April 17:00 Brussels:</strong> DEADLINE</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Key Decisions to Make Early</h4>
+        <div class="check-item"><div class="check-box"></div>Which crops/pest systems? (Cover multiple — the scope demands breadth)</div>
+        <div class="check-item"><div class="check-box"></div>Include forestry? (Strong differentiator if you have the right partner)</div>
+        <div class="check-item"><div class="check-box"></div>AI/digital component scope? (Invited but must serve the resistance problem)</div>
+        <div class="check-item"><div class="check-box"></div>Geographic coverage? (Multiple climate zones strengthen the systemic argument)</div>
+        <div class="check-item"><div class="check-box"></div>Who leads foresight WP? (Must be credible — not a retrofit onto an IPM consortium)</div>
+        <div class="check-item"><div class="check-box"></div>How many WPs? (Recommend 5-7: mapping, detection/AI, IPWM strategies, post-harvest, foresight, multi-actor/dissemination, management)</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta" style="margin-bottom:0;">
+    <div class="order-cta-text">Ready to apply? Get your Decision Brief — €79</div>
+    <div class="order-cta-sub">Request via form · We verify the topic · Brief delivered within 1 working day</div>
+  </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>Prepared by: <strong>Kristjan Zemljič / Global Disruption</strong></p>
+  <p>Source documents: F&T Portal topic page (HORIZON-CL6-2026-02-FARM2FORK-02), General Annexes 2026-2027, WP Part 9 — Food, Bioeconomy, Natural Resources, Agriculture and Environment, Topic Update 17 Feb 2026</p>
+  <p>Disclaimer: This analysis is based on publicly available EU documents. It does not constitute legal or financial advice. Always verify against official documents on the EU Funding & Tenders Portal.</p>
+  <p style="color:rgba(255,255,255,.35);">Last updated: 18 March 2026</p>
+</div>
+
+</body>
+</html>
