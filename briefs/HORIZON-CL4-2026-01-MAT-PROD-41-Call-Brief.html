@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Call Intelligence Brief — HORIZON-CL4-2026-01-MAT-PROD-41</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--eu-blue:#362E6B;--eu-blue-light:#6A5CAD;--eu-gold:#D47A20;--eu-gold-soft:rgba(212,122,32,0.08);--accent:#e8491d;--bg:#f0f2f5;--bg-card:#fff;--bg-highlight:rgba(54,46,107,0.06);--text:#2d3748;--text-mid:#5a6577;--text-light:#8a8f9f;--border:#e0e0e8;--border-light:#efefef;--purple:#9c27b0;--purple-soft:#f3e5f5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Helvetica Neue',sans-serif;color:var(--text);background:var(--bg);font-size:15px;line-height:1.7;font-weight:400}
+strong,b{font-weight:600;color:var(--text)}
+.container{max-width:900px;margin:0 auto;padding:0 32px}
+.hero{background:linear-gradient(135deg,var(--eu-blue) 0%,#1F1A40 60%,#0d0a1a 100%);color:#fff;padding:56px 0 72px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;background:radial-gradient(circle,rgba(212,122,32,0.12),transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--eu-gold),#D47A20,var(--eu-gold))}
+.hero-inner{max-width:900px;margin:0 auto;padding:0 32px}
+.hero-label{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);padding:6px 14px;border-radius:4px;margin-bottom:20px}
+.hero h1{font-family:'DM Serif Display',Georgia,serif;font-size:28px;font-weight:400;line-height:1.3;margin-bottom:8px}
+.hero h1 span{color:#D47A20}
+.hero .topic-code{font-family:'JetBrains Mono',monospace;font-size:15px;color:rgba(255,255,255,.6);margin-bottom:14px;display:block}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.8);font-style:italic;margin-bottom:28px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:24px}
+.hero-meta-item{display:flex;flex-direction:column;gap:2px}
+.hero-meta-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.hero-meta-value{font-family:'Inter','Helvetica Neue',sans-serif;font-size:17px;font-weight:600}
+.hero-meta-value.highlight{color:#D47A20}
+.glance{margin-top:-30px;position:relative;z-index:1}
+.glance-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.glance-item{background:var(--bg-card);padding:18px 20px;display:flex;flex-direction:column;gap:4px}
+.glance-item-label{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-light)}
+.glance-item-value{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);line-height:1.35}
+.glance-item-note{font-size:11.5px;color:var(--text-light);line-height:1.4}
+section{padding:48px 0 32px}
+.section-number{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--eu-blue);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:8px}
+section h2{font-family:'DM Serif Display',Georgia,serif;font-size:24px;font-weight:400;color:var(--text);margin-bottom:6px}
+.section-lead{color:var(--text-mid);font-size:15px;margin-bottom:28px;font-style:italic}
+section h3{font-family:'DM Serif Display',Georgia,serif;font-size:18px;font-weight:400;color:var(--text);margin:28px 0 12px}
+section p{margin-bottom:14px}
+.divider{height:1px;background:var(--border);margin:0}
+.signal-list{display:flex;flex-direction:column;gap:16px;margin:20px 0}
+.signal{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px 24px 24px 48px;position:relative;transition:box-shadow .2s,border-color .2s}
+.signal:hover{box-shadow:0 4px 16px rgba(54,46,107,0.08);border-color:var(--eu-blue-light)}
+.signal-num{position:absolute;top:16px;left:14px;font-family:'DM Serif Display',Georgia,serif;font-size:32px;font-weight:400;color:var(--eu-blue);opacity:.08}
+.signal-title{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);margin-bottom:8px}
+.signal-body{font-size:14px;color:var(--text-mid);line-height:1.6}
+.signal-body strong{color:var(--text);font-weight:600}
+.source-ref{font-size:12px;color:var(--text-light);margin-top:-4px;padding-left:12px;border-left:2px solid var(--border-light);margin-bottom:14px}
+.callout{border-left:4px solid var(--eu-blue);background:var(--bg-highlight);padding:18px 22px;border-radius:0 8px 8px 0;margin:18px 0;font-size:14px}
+.callout.gold{border-left-color:var(--eu-gold);background:var(--eu-gold-soft)}
+.callout.warn{border-left-color:var(--accent);background:#fef3f0}
+.callout.interpretation{border-left-color:var(--purple);background:var(--purple-soft)}
+.interpretation-label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--purple);text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px;font-weight:500}
+.interpretation-note{font-size:13px;color:var(--text-mid);font-style:italic;margin-top:8px}
+.callout strong{color:var(--text);font-weight:600}
+.table-wrap{border:1px solid var(--border);border-radius:8px;overflow:hidden;margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead th{background:var(--eu-blue);color:#fff;font-size:13px;font-weight:500;padding:10px 14px;text-align:left}
+tbody td{padding:10px 14px;border-bottom:1px solid var(--border-light);vertical-align:top}
+tbody tr:nth-child(even){background:rgba(0,51,153,.015)}
+tbody tr:hover{background:rgba(0,51,153,.03)}
+tbody td:first-child{font-weight:500;color:var(--text)}
+.status-red{color:#d32f2f;font-weight:600}
+.status-amber{color:#f57c00;font-weight:600}
+.status-green{color:#388e3c;font-weight:600}
+.score-grid{display:flex;flex-direction:column;gap:12px;margin:18px 0}
+.score-row{display:grid;grid-template-columns:180px 1fr 60px 60px;align-items:center;gap:12px}
+.score-label{font-weight:500;font-size:14px}
+.score-bar-wrap{background:var(--border-light);border-radius:6px;height:28px;overflow:hidden}
+.score-bar{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600}
+.score-bar.excellence{background:linear-gradient(135deg,var(--eu-blue),var(--eu-blue-light));width:33.3%}
+.score-bar.impact{background:linear-gradient(135deg,var(--eu-blue),#6A5CAD);width:33.3%}
+.score-bar.implementation{background:linear-gradient(135deg,var(--eu-gold),#e8891a);width:33.3%}
+.score-min{font-size:12px;color:var(--text-light);text-align:right}
+.score-max{font-size:12px;color:var(--text-mid);font-weight:600}
+.partner-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin:18px 0}
+.partner-card{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:24px}
+.partner-card h4{font-family:'Inter','Helvetica Neue',sans-serif;font-size:15px;font-weight:600;color:var(--eu-blue);margin-bottom:12px}
+.partner-card ul{list-style:none;padding:0}
+.partner-card li{font-size:14px;color:var(--text-mid);padding:4px 0 4px 20px;position:relative}
+.partner-card li::before{content:'→';position:absolute;left:0;color:var(--eu-blue);font-weight:600}
+.checklist{margin:18px 0}
+.checklist-group{margin-bottom:24px}
+.checklist-group h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--eu-blue);padding-bottom:8px;border-bottom:2px solid var(--eu-blue);margin-bottom:14px}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0;font-size:14px;color:var(--text-mid)}
+.check-box{width:18px;height:18px;min-width:18px;border:2px solid var(--border);border-radius:4px;margin-top:2px}
+.outcomes-list{margin:14px 0;padding:0;list-style:none;counter-reset:outcome}
+.outcomes-list li{counter-increment:outcome;padding:12px 16px 12px 44px;position:relative;background:var(--bg-card);border:1px solid var(--border-light);border-radius:6px;margin-bottom:8px;font-size:14px;line-height:1.55}
+.outcomes-list li::before{content:'EO' counter(outcome);position:absolute;left:12px;top:12px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--eu-gold);font-weight:500;letter-spacing:.5px}
+.footer{background:#0a0a1a;color:rgba(255,255,255,.6);padding:40px 32px;text-align:center;font-size:13px;line-height:1.7;margin-top:48px}
+.footer strong{color:rgba(255,255,255,.85)}
+.order-cta{display:block;background:linear-gradient(135deg,#D47A20,#e8891a);border-radius:10px;padding:20px 28px;text-align:center;text-decoration:none;margin:32px 0;transition:box-shadow .2s,transform .2s}
+.order-cta:hover{box-shadow:0 6px 24px rgba(212,122,32,0.25);transform:translateY(-1px)}
+.order-cta-text{font-size:15px;font-weight:600;color:#fff}
+.order-cta-sub{font-size:12px;color:rgba(255,255,255,0.7);margin-top:4px}
+@media(max-width:700px){.hero{padding:32px 0 56px}.hero-inner,.container{padding:0 16px}.hero h1{font-size:22px}.hero-meta{flex-direction:column;gap:12px}.score-row{grid-template-columns:1fr}.signal{padding-left:24px}.signal-num{display:none}}
+@media print{.signal:hover,tbody tr:hover{box-shadow:none}body{font-size:12px}.hero{padding:24px 0 40px}}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">Horizon Europe · Call Intelligence Brief</div>
+    <h1>Enhancing industry-academia knowledge exchange in <span>Social Sciences and Humanities (SSH)</span> (CSA)</h1>
+    <span class="topic-code">HORIZON-CL4-2026-01-MAT-PROD-41</span>
+    <p class="hero-sub">Everything you need to decide whether to apply — and how to win.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Deadline</span>
+        <span class="hero-meta-value highlight">21 April 2026 · 17:00 Brussels</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Total Budget</span>
+        <span class="hero-meta-value">€2,000,000</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Instrument</span>
+        <span class="hero-meta-value">CSA · 100% funding</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Stage</span>
+        <span class="hero-meta-value">Single-stage</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 0: VERIFIED FACTS ===== -->
+<div class="container">
+  <div class="glance">
+    <div class="glance-grid">
+      <div class="glance-item">
+        <span class="glance-item-label">Topic Code</span>
+        <span class="glance-item-value">HORIZON-CL4-2026-01-MAT-PROD-41</span>
+        <span class="glance-item-note">F&T Portal, topic page header</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Call Identifier</span>
+        <span class="glance-item-value">HORIZON-CL4-2026-01</span>
+        <span class="glance-item-note">F&T Portal, General Information: "INDUSTRY"</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Instrument</span>
+        <span class="glance-item-value">HORIZON-CSA</span>
+        <span class="glance-item-note">F&T Portal, "Type of action"</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Budget Model</span>
+        <span class="glance-item-value">Lump Sum</span>
+        <span class="glance-item-note">F&T Portal, "Type of MGA": HORIZON Lump Sum Grant [HORIZON-AG-LS]</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Funding Rate</span>
+        <span class="glance-item-value">100%</span>
+        <span class="glance-item-note">General Annexes, Annex G — CSA = 100%</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Page Limit (Part B)</span>
+        <span class="glance-item-value">28 pages</span>
+        <span class="glance-item-note">CSA + lump sum = 28pp (General Annexes 2026-2027, Annex A)</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Evaluation Thresholds</span>
+        <span class="glance-item-value">3 / 3 / 3 · cum. 10</span>
+        <span class="glance-item-note">STANDARD — no topic-specific override in section 5b</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Expected Projects</span>
+        <span class="glance-item-value">[NOT STATED]</span>
+        <span class="glance-item-note">Not stated in topic conditions or WP text</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Destination</span>
+        <span class="glance-item-value" style="font-size:14px;">Achieving technological leadership — open strategic autonomy in raw materials, chemicals and innovative materials (2026-27)</span>
+        <span class="glance-item-note">F&T Portal, Destination section</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Cluster / Pillar</span>
+        <span class="glance-item-value">Cluster 4 — Digital, Industry and Space / Pillar II</span>
+        <span class="glance-item-note">WP Part 7 — Digital, Industry and Space</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">China Eligibility</span>
+        <span class="glance-item-value" style="color: var(--eu-gold);">ELIGIBLE ✓</span>
+        <span class="glance-item-note">Destination excludes RIA &amp; IA only — CSA not restricted</span>
+      </div>
+      <div class="glance-item">
+        <span class="glance-item-label">Comm. Network Protection</span>
+        <span class="glance-item-value">Not applicable</span>
+        <span class="glance-item-note">Not stated in topic conditions</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:24px 0 12px;">
+    <p style="font-size:13px;color:var(--text-light);">
+      <strong>Verify these facts:</strong> <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/topic-details/horizon-cl4-2026-01-mat-prod-41" target="_blank" style="color:var(--eu-blue);">Topic page on F&T Portal</a><br>
+      Source documents: General Annexes 2026-2027 (Commission Decision C(2025) 8493), WP Part 7 — Digital, Industry and Space<br>
+      <em>If any fact above doesn't match the Portal, this brief may be outdated. Check the F&T Portal directly.</em>
+    </p>
+  </div>
+
+  <div class="callout gold" style="margin-top:20px;">
+    <strong>KEY DIFFERENCE: China is ELIGIBLE for this topic.</strong> The destination text excludes Chinese entities from "both Research and Innovation Actions (RIAs) and Innovation Actions (IAs) falling under this destination." This is a CSA — Coordination and Support Action — which is NOT listed in the exclusion. Chinese entities may participate. This is a frequently misread rule: the exclusion is instrument-specific, not blanket.
+  </div>
+  <p class="source-ref">Source: "Legal entities established in China are not eligible to participate in both Research and Innovation Actions (RIAs) and Innovation Actions (IAs) falling under this destination." — Destination conditions. CSA is not named.</p>
+
+  <h3 style="margin-top:32px;">Expected Outcomes</h3>
+  <p style="font-size:13px;color:var(--text-mid);margin-bottom:8px;">(Topic text, Expected Outcomes section):</p>
+
+  <ol class="outcomes-list">
+    <li>Increased innovation capabilities for industry by harnessing the potential of Social Sciences and Humanities, including the Arts, to provide effective solutions to companies' research and innovation challenges and organisational development.</li>
+    <li>Improved strategies to bring new products and technologies to the industry environment and ultimately to the market.</li>
+    <li>By facilitating industry exposure, SSH researchers' better understanding of industry needs and opportunities for collaboration.</li>
+  </ol>
+</div>
+
+<div class="divider" style="margin-top:32px;"></div>
+
+<!-- ===== SECTION 1: CALL DECODER ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">01</span>
+    <h2>Call Decoder</h2>
+    <p class="section-lead">What the EC actually wants — decoded from the topic text.</p>
+
+    <h3>1.1 Strategic Signals</h3>
+
+    <div class="signal-list">
+      <div class="signal">
+        <span class="signal-num">1</span>
+        <div class="signal-title">This is about industry pulling from SSH — not SSH pushing into industry</div>
+        <div class="signal-body">The topic centres on <strong>companies' specific needs</strong> as the starting point. SSH researchers solve industry problems, not the other way around. Proposals that frame this as "SSH researchers need more industry exposure" misread the direction. The industry is the client; SSH provides the expertise.</div>
+      </div>
+      <p class="source-ref">Source: "This action aims to leverage the strengths of social sciences, humanities and arts (SSH) to address companies' specific needs, fostering a dynamic and productive industry-academia co-creation for knowledge valorisation." — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">2</span>
+        <div class="signal-title">Three mandatory activities — all three must be covered</div>
+        <div class="signal-body">The topic specifies exactly three activities: (1) <strong>developing a methodology</strong> for SSH-industry knowledge exchange, (2) <strong>a service to industry/SMEs</strong> using international SSH teams, and (3) <strong>a feasibility study</strong> on SSH knowledge exchange for innovation management. These are not suggestions — "The action will cover the following activities" is directive language. All three must appear in your work plan.</div>
+      </div>
+      <p class="source-ref">Source: "The action will cover the following activities: [...]" — Topic scope, activities list</p>
+
+      <div class="signal">
+        <span class="signal-num">3</span>
+        <div class="signal-title">Co-creation formats are named — use them</div>
+        <div class="signal-body">The topic names specific formats: <strong>hackathons, team-based approaches, targeted mentorship and exchange programmes</strong>. These are examples, not requirements ("for example"), but they signal what the EC envisions. Proposals that describe abstract "collaboration frameworks" without concrete co-creation activities will feel disconnected from the scope.</div>
+      </div>
+      <p class="source-ref">Source: "This action will implement SSH–industry co-creation (for example hackathons, team-based approaches, targeted mentorship and exchange programmes etc) focussing on specific challenges from industry and SMEs [...]" — Topic scope</p>
+
+      <div class="signal">
+        <span class="signal-num">4</span>
+        <div class="signal-title">The scope covers a broad range of industry challenges — not just technology</div>
+        <div class="signal-body">The topic lists specific challenge areas SSH should address: <strong>socio-technical implications, broadening strategic perspectives, customer needs, legal requirements, market pathways, inequality considerations, organisational development, sustainability and long-term profitability</strong>. This is wider than just "technology transfer." Proposals should show how SSH adds value across multiple dimensions, not just one.</div>
+      </div>
+      <p class="source-ref">Source: "[...] including, but not limited to understanding the socio-technical implications of new technologies and innovations, broadening the perspectives of companies' strategic actions, creating a deeper understanding of customer needs, legal requirements and pathways to the market, strengthening the integration of social, economic and cultural inequality considerations into industry practices and innovation processes, developing new ideas and innovations and contributing to organisational development, sustainability and long-term profitability." — Topic scope</p>
+    </div>
+
+    <h3>1.2 Scope Boundaries</h3>
+
+    <div class="callout">
+      <strong>IN SCOPE</strong> (directly from topic text):
+      <ul style="margin:8px 0 0 16px;font-size:14px;">
+        <li>SSH–industry co-creation for knowledge valorisation</li>
+        <li>SMEs, spinoffs, and startups alongside larger industry</li>
+        <li>International teams of SSH researchers and students</li>
+        <li>Social sciences, humanities, and arts (the "A" in SSH is explicitly included)</li>
+        <li>Methodology development + service delivery + feasibility study</li>
+      </ul>
+    </div>
+
+    <div class="callout interpretation">
+      <span class="interpretation-label">Our Reading</span>
+      <p><strong>Based on:</strong> The scope names "industry and SMEs including spinoffs and startups" (mandatory activity 2) and covers a very broad range of challenge areas. There is no sector restriction — the topic does not limit to manufacturing, digital, or any specific industry. The destination is about raw materials and advanced materials, but this specific CSA topic is a cross-cutting SSH intervention.</p>
+      <p>The absence of sector restriction suggests proposals could work across multiple industries. However, anchoring to at least some of the destination's core themes (materials, chemicals, industrial transformation) would strengthen relevance scoring under Excellence.</p>
+      <p class="interpretation-note">This is a strategic interpretation. Assess whether it applies to your specific project.</p>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 2: COMPLIANCE MATRIX ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">02</span>
+    <h2>Compliance Matrix</h2>
+    <p class="section-lead">What kills your proposal before evaluation.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Status</th><th>Gate</th><th>Rule</th><th>Your Check</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Lump sum budget table</td>
+            <td>Mandatory Excel budget table with lump sum breakdown (HORIZON Lump Sum Grant)</td>
+            <td>Download the "Detailed budget table (HE LS)" from the submission system. If purchase costs >15% of personnel costs for any participant, justify in the "Any comments" sheet.</td>
+          </tr>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Page limit</td>
+            <td>28 pages for Part B (CSA + lump sum, General Annexes Annex A)</td>
+            <td>12 fewer pages than a standard RIA. Plan content carefully — every page counts.</td>
+          </tr>
+          <tr>
+            <td><span class="status-red">🔴 CRITICAL</span></td>
+            <td>Consortium minimum</td>
+            <td>Min. 1 legal entity from an EU MS or Associated Country (General Annex B, CSA)</td>
+            <td>CSA minimum is lower than RIA/IA. But a single-entity proposal for this topic would be weak — the scope requires "international teams."</td>
+          </tr>
+          <tr>
+            <td><span class="status-amber">🟡 IMPORTANT</span></td>
+            <td>Lump sum cost justification</td>
+            <td>Topic update (16 Feb 2026): if purchase costs (travel + equipment + other) exceed 15% of personnel costs per participant, justify in "Any comments" sheet</td>
+            <td>This was a February 2026 update. Many applicants may miss it. Read the Topic Updates section on the Portal.</td>
+          </tr>
+          <tr>
+            <td><span class="status-amber">🟡 IMPORTANT</span></td>
+            <td>PIC registration</td>
+            <td>All participants must be registered in the Participant Register (General Annex B)</td>
+            <td>Start early for new partners — especially SSH academics new to Horizon Europe</td>
+          </tr>
+          <tr>
+            <td><span class="status-green">🟢 NOTE</span></td>
+            <td>China eligibility</td>
+            <td>Chinese entities ARE eligible for this CSA — the destination exclusion applies to RIA and IA only</td>
+            <td>If you have Chinese SSH partners, they can participate</td>
+          </tr>
+          <tr>
+            <td><span class="status-green">🟢 NOTE</span></td>
+            <td>Gender Equality Plan</td>
+            <td>Required for public bodies, HEIs, and research organisations (General Annex B)</td>
+            <td>Confirm GEP status for all academic partners</td>
+          </tr>
+          <tr>
+            <td><span class="status-green">🟢 NOTE</span></td>
+            <td>Evaluation thresholds</td>
+            <td>Standard: 3/3/3, cumulative 10 (General Annex D)</td>
+            <td>No topic-specific override. Standard thresholds apply.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout warn">
+      <strong>TRAP: Underestimating the lump sum budget table.</strong> This is not an actual-costs proposal where the budget is secondary to the narrative. In a lump sum topic, the detailed budget table IS the budget. Evaluators assess it under Implementation. Sloppy cost estimates or missing justifications in the "Any comments" sheet will cost you points.
+    </div>
+
+    <div class="callout">
+      <strong>2026-2027 Change:</strong> The template has been simplified — cost justification for items previously in Part B has been moved to the Excel "Any comments" sheet. This is a February 2026 update specific to this call. Applicants using older guidance will put cost justification in the wrong place.
+    </div>
+    <p class="source-ref">Source: "we simplified the proposal template, removing this information from Part B and bringing it closer to the relevant budget items. Specifically, you must include justification in the 'Any comments' sheet [...]" — Topic updates, 16 February 2026</p>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta">
+    <div class="order-cta-text">Need this analysis for YOUR topic? Request a Decision Brief &mdash; &euro;79</div>
+    <div class="order-cta-sub">112 Horizon Europe topics covered &middot; Delivered within 1 working day</div>
+  </a>
+</div>
+
+<!-- ===== SECTION 3: SCORING PLAYBOOK ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">03</span>
+    <h2>Scoring Playbook</h2>
+    <p class="section-lead">How to score well on each criterion — for this specific CSA topic.</p>
+
+    <div class="callout gold">
+      <strong>Scoring overview:</strong> 3 criteria, each scored 0–5 in half-point steps. <strong>Standard thresholds: 3 per criterion, 10 overall.</strong> For CSA, all criteria have equal weight in ranking. Tiebreaker: Excellence score first, then Impact. (Source: General Annex D, WP 2026-2027)
+    </div>
+
+    <div class="score-grid">
+      <div class="score-row">
+        <span class="score-label">Excellence</span>
+        <div class="score-bar-wrap"><div class="score-bar excellence">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Impact</span>
+        <div class="score-bar-wrap"><div class="score-bar impact">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+      <div class="score-row">
+        <span class="score-label">Implementation</span>
+        <div class="score-bar-wrap"><div class="score-bar implementation">min 3 / 5</div></div>
+        <span class="score-min">threshold 3</span>
+        <span class="score-max">/ 5</span>
+      </div>
+    </div>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">EXCELLENCE</h4>
+    <p style="font-size:13px;color:var(--text-light);">CSA sub-criteria from General Annex D: clarity and pertinence of objectives; soundness of proposed methodology.</p>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> Objectives that map to all 3 expected outcomes — innovation capability for industry (EO1), improved market strategies (EO2), and SSH researcher understanding of industry (EO3). The methodology must describe concrete co-creation formats (the topic names hackathons, team-based approaches, mentorship, exchange programmes) and explain how they address real industry needs. A strong proposal will show a credible methodology for matching SSH expertise to specific company challenges — not a generic "we will organise workshops."
+    </div>
+    <p class="source-ref">Source: EO1–EO3 require industry innovation capability + market strategies + SSH researcher development. Methodology must implement "SSH–industry co-creation" with named formats. — Topic scope</p>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">IMPACT</h4>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> A credible pathway showing how the action's outputs (methodology + service + study) lead to sustained SSH-industry collaboration beyond the project. The feasibility study (mandatory activity 3) is your vehicle for systemic impact — it should produce recommendations that others can adopt. Demonstrate uptake by showing how SMEs and startups, not just large companies, benefit from the co-creation service.
+    </div>
+    <p class="source-ref">Source: EO1 targets "companies' research and innovation challenges." EO2 requires "strategies to bring new products and technologies to the industry environment and ultimately to the market." — Topic expected outcomes</p>
+
+    <h4 style="margin-top:24px;color:var(--eu-blue);">IMPLEMENTATION</h4>
+
+    <div class="callout gold">
+      <strong>What scores 4-5 for THIS topic:</strong> A clear WP structure covering all 3 mandatory activities. The lump sum budget table must be credible — allocations proportionate to effort. Consortium demonstrates both SSH research capacity and industry connections. Given the €2M total budget, the work plan should be focused and realistic — do not overpromise. Risk register should address: industry partner disengagement, recruitment of SSH researchers willing to work on industry problems, and IP sensitivity around company-specific challenges.
+    </div>
+
+    <div class="callout interpretation">
+      <span class="interpretation-label">Our Reading</span>
+      <p><strong>Based on:</strong> The €2M total budget and the scope requiring methodology development, a service to industry, and a feasibility study.</p>
+      <p>With €2M, we expect 1-2 projects to be funded. The scope is focused enough for a single project to address all three activities comprehensively. This means the competition is for a small number of grants — quality of the consortium and credibility of industry access will be decisive. A consortium led by an SSH institution with a strong industry network (through a science park, innovation hub, or industry association partner) would be well-positioned.</p>
+      <p class="interpretation-note">This is a strategic interpretation based on budget arithmetic and scope analysis. Assess whether it matches your consortium's profile.</p>
+    </div>
+
+    <h3>Ranking &amp; Tiebreakers</h3>
+    <div class="callout">
+      <strong>CSA ranking:</strong> Proposals ranked by total score (sum of 3 criteria, equal weight). Tiebreaker: (1) Excellence, (2) Impact. (Source: General Annex D, WP 2026-2027)
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 4: CONSORTIUM BLUEPRINT ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">04</span>
+    <h2>Consortium Blueprint</h2>
+    <p class="section-lead">Who you need — and the minimum is lower than you think.</p>
+
+    <div class="callout">
+      <strong>Minimum consortium:</strong> 1 legal entity from an EU Member State or Associated Country (General Annex B, CSA). In practice, the scope's emphasis on "international teams" and "industry-academia co-creation" requires a multi-partner, multi-sector consortium.
+    </div>
+
+    <div class="partner-cols">
+      <div class="partner-card">
+        <h4>SSH Research Institutions</h4>
+        <ul>
+          <li>Universities with SSH faculties active in applied/industry-oriented research</li>
+          <li>Research centres in innovation studies, design thinking, organisational science</li>
+          <li>Arts institutions (the topic explicitly includes "the Arts")</li>
+        </ul>
+        <p class="source-ref" style="margin-top:8px;">Source: "Social Sciences and Humanities, including the Arts" — Topic expected outcomes</p>
+      </div>
+      <div class="partner-card">
+        <h4>Industry &amp; SME Partners</h4>
+        <ul>
+          <li>Industry associations or clusters (access to multiple companies)</li>
+          <li>SMEs, spinoffs, startups — explicitly named in scope</li>
+          <li>Innovation hubs or science parks as intermediaries</li>
+        </ul>
+        <p class="source-ref" style="margin-top:8px;">Source: "Service to industry and SMEs including spinoffs and startups" — Topic scope, mandatory activity 2</p>
+      </div>
+      <div class="partner-card">
+        <h4>Coordination &amp; Methodology</h4>
+        <ul>
+          <li>Organisation with experience in industry-academia matchmaking</li>
+          <li>Policy body or knowledge transfer office</li>
+          <li>Network organisation for scaling the methodology</li>
+        </ul>
+        <p class="source-ref" style="margin-top:8px;">Source: Mandatory activities require methodology development + feasibility study — requires coordination expertise</p>
+      </div>
+    </div>
+
+    <h3>Who's In, Who's Out</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Entity / Country</th><th>Status</th><th>Source</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>China</td>
+            <td><span class="status-green">ELIGIBLE ✓</span></td>
+            <td>Destination exclusion names RIA and IA only — CSA not restricted</td>
+          </tr>
+          <tr>
+            <td>Russia / Belarus</td>
+            <td><span class="status-red">EXCLUDED</span></td>
+            <td>Standing EU Council sanctions — all instruments</td>
+          </tr>
+          <tr>
+            <td>UK, Switzerland, Associated Countries</td>
+            <td><span class="status-green">ELIGIBLE</span></td>
+            <td>General Annex B — standard association rules</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta">
+    <div class="order-cta-text">Get this level of analysis for any April 2026 topic &mdash; &euro;79</div>
+    <div class="order-cta-sub">Compliance traps &middot; Scoring playbook &middot; Consortium blueprint &middot; All sourced</div>
+  </a>
+</div>
+
+<!-- ===== SECTION 5: POSITIONING GUIDE ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">05</span>
+    <h2>Topic Positioning Guide</h2>
+    <p class="section-lead">How to frame your idea for this specific topic.</p>
+
+    <h3>Destination Context</h3>
+    <p>This topic sits under Destination <strong>"Achieving technological leadership for Europe's open strategic autonomy in raw materials, chemicals and innovative materials"</strong> in Cluster 4 — Digital, Industry and Space. The destination is heavily focused on industrial transformation, advanced materials, and critical raw materials.</p>
+    <p>This CSA is unusual within the destination — it's a soft, SSH-focused topic in a hard-tech environment. That creates both a positioning opportunity and a trap.</p>
+
+    <div class="signal-list">
+      <div class="signal">
+        <span class="signal-num">1</span>
+        <div class="signal-title">Anchor to industrial transformation — not pure SSH theory</div>
+        <div class="signal-body">The destination context is about industrial competitiveness, the Clean Industrial Deal, and advanced materials. While this CSA is SSH-focused, framing it within the destination's industrial transformation narrative strengthens relevance. Show how SSH insights drive real industrial innovation — not just academic understanding.</div>
+      </div>
+      <p class="source-ref">Source: Destination description references "Competitiveness Compass," "Clean Industrial Deal," and "twin green and digital transition" as drivers. — Destination text</p>
+
+      <div class="signal">
+        <span class="signal-num">2</span>
+        <div class="signal-title">Position the service as a replicable model, not a one-off pilot</div>
+        <div class="signal-body">Mandatory activity 2 is a "service to industry and SMEs." The feasibility study (activity 3) examines whether this works at scale. Together, they signal the EC wants a <strong>proven, transferable model</strong> — not a bespoke consulting engagement for 3 companies. Design for replicability from day one.</div>
+      </div>
+      <p class="source-ref">Source: "A study to tackle the key questions concerning the technical and conceptual feasibility of Industry-Academia knowledge exchange with SSH to improve innovation management and organisational development." — Topic scope, mandatory activity 3</p>
+
+      <div class="signal">
+        <span class="signal-num">3</span>
+        <div class="signal-title">Include the Arts — it's explicitly invited</div>
+        <div class="signal-body">The topic and expected outcomes mention "Social Sciences and Humanities, including the Arts." This is not standard HE language. If your consortium includes design, creative industries, or arts-based innovation partners, highlight this as a direct response to the topic text.</div>
+      </div>
+      <p class="source-ref">Source: "harnessing the potential of Social Sciences and Humanities, including the Arts" — Topic expected outcome 1</p>
+    </div>
+
+    <h3>Cross-Cutting Alignment</h3>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Priority</th><th>Referenced?</th><th>How to Address</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>SSH integration</td>
+            <td><span class="status-green">CORE TOPIC</span></td>
+            <td>This IS the SSH topic. Your entire proposal is SSH integration.</td>
+          </tr>
+          <tr>
+            <td>SME/startup participation</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>"Industry and SMEs including spinoffs and startups" — mandatory activity 2. Include SME service delivery in your work plan.</td>
+          </tr>
+          <tr>
+            <td>Knowledge valorisation</td>
+            <td><span class="status-green">YES — explicit</span></td>
+            <td>"Industry-academia co-creation for knowledge valorisation" — this is the topic's stated mechanism.</td>
+          </tr>
+          <tr>
+            <td>Inequality/inclusion</td>
+            <td><span class="status-green">YES — in scope list</span></td>
+            <td>"Strengthening the integration of social, economic and cultural inequality considerations into industry practices" — named as a challenge area.</td>
+          </tr>
+          <tr>
+            <td>Sustainability</td>
+            <td><span class="status-green">YES — in scope list</span></td>
+            <td>"Contributing to organisational development, sustainability and long-term profitability" — named as a challenge area.</td>
+          </tr>
+          <tr>
+            <td>Open Science / FAIR data</td>
+            <td><span class="status-amber">NOT EXPLICIT</span></td>
+            <td>Not mentioned in topic text. Standard HE requirements apply — include DMP commitment but don't over-invest here.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Red Flags</h3>
+
+    <div class="callout warn">
+      <strong>Red Flag 1: Treating this as an academic SSH project.</strong> The topic is about industry benefit, not SSH research advancement. A proposal that reads like a sociology research project with an industry "case study" attached will fail the pertinence test in Excellence. The industry partners must be clients with real problems, not research subjects.
+    </div>
+    <p class="source-ref">Source: EO1 requires "effective solutions to companies' research and innovation challenges" — not academic publications about industry. — Topic expected outcomes</p>
+    <div class="callout warn">
+      <strong>Red Flag 2: Missing any of the 3 mandatory activities.</strong> The scope says "the action will cover the following activities" and lists exactly three. Omitting the feasibility study (activity 3) because it seems less exciting than the co-creation service (activity 2) will create a compliance gap.
+    </div>
+    <p class="source-ref">Source: "The action will cover the following activities: [...]" — Topic scope. Directive language, not optional.</p>
+    <div class="callout warn">
+      <strong>Red Flag 3: Overscoping for €2M.</strong> This is a small budget. Proposals that promise transnational industry transformation at the scale of a €10M RIA will not be credible under Implementation. Focus on a well-defined proof of concept with clear scalability logic, not a sprawling programme.
+    </div>
+  </section>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== SECTION 6: QUICK-START CHECKLIST ===== -->
+<div class="container">
+  <section>
+    <span class="section-number">06</span>
+    <h2>Quick-Start Checklist</h2>
+    <p class="section-lead">Your action plan — work backwards from 21 April 2026.</p>
+
+    <div class="checklist">
+      <div class="checklist-group">
+        <h4>Documents to Gather</h4>
+        <div class="check-item"><div class="check-box"></div>WP Part 7 — Digital, Industry and Space (2026-2027)</div>
+        <div class="check-item"><div class="check-box"></div>Standard Application Form (HE CSA) from topic submission page</div>
+        <div class="check-item"><div class="check-box"></div>Detailed budget table (HE LS) — lump sum Excel template</div>
+        <div class="check-item"><div class="check-box"></div>General Annexes 2026-2027</div>
+        <div class="check-item"><div class="check-box"></div>Read the Topic Update from 16 Feb 2026 — lump sum justification rules changed</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Consortium Building (now — Week -4)</h4>
+        <div class="check-item"><div class="check-box"></div>Identify 3-6 partners: SSH institutions + industry intermediaries + companies/SMEs</div>
+        <div class="check-item"><div class="check-box"></div>Ensure at least one partner with direct industry/SME network access</div>
+        <div class="check-item"><div class="check-box"></div>Consider arts/creative sector partners (explicitly invited in scope)</div>
+        <div class="check-item"><div class="check-box"></div>Confirm PIC registration for all partners</div>
+        <div class="check-item"><div class="check-box"></div>Confirm GEP status for academic partners</div>
+        <div class="check-item"><div class="check-box"></div>Check Partner Search announcements on F&T Portal (71 published)</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Proposal Timeline (deadline: 21 April 2026)</h4>
+        <div class="check-item"><div class="check-box"></div><strong>By ~25 March:</strong> Consortium confirmed, concept note agreed</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~1 April:</strong> Start writing Part B (28 pages — plan content carefully)</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~10 April:</strong> First draft + lump sum budget table complete</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~16 April:</strong> Internal review, check "Any comments" justifications in budget table</div>
+        <div class="check-item"><div class="check-box"></div><strong>By ~19 April:</strong> Portal submission, PDF + Excel upload verification</div>
+        <div class="check-item"><div class="check-box"></div><strong>21 April 17:00 Brussels:</strong> DEADLINE</div>
+      </div>
+
+      <div class="checklist-group">
+        <h4>Key Decisions to Make Early</h4>
+        <div class="check-item"><div class="check-box"></div>Which industry sectors will you focus on? (Open scope, but anchoring to destination themes helps)</div>
+        <div class="check-item"><div class="check-box"></div>Which SSH disciplines? (Sociology, psychology, design, arts, economics, law — all mentioned in scope)</div>
+        <div class="check-item"><div class="check-box"></div>How many companies/SMEs will participate in the co-creation service?</div>
+        <div class="check-item"><div class="check-box"></div>How many WPs? (Recommend 3-4 for this budget: methodology, service, study, management/dissemination)</div>
+        <div class="check-item"><div class="check-box"></div>Who leads the feasibility study — an academic or an industry partner?</div>
+        <div class="check-item"><div class="check-box"></div>JRC cooperation: topic destination mentions INCITE and EIGL — plan liaison</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="container" style="margin-bottom:0;">
+  <a href="https://forms.gle/YOUR_FORM_ID_HERE" target="_blank" class="order-cta" style="margin-bottom:0;">
+    <div class="order-cta-text">Ready to apply? Get your Decision Brief &mdash; &euro;79</div>
+    <div class="order-cta-sub">Request via form &middot; We verify the topic &middot; Brief delivered within 1 working day</div>
+  </a>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <p>Prepared by: <strong>LOGIQ AI Engine — Kristjan Zemljič / Global Disruption</strong></p>
+  <p>Source documents: F&T Portal topic page (HORIZON-CL4-2026-01-MAT-PROD-41), General Annexes 2026-2027 (Commission Decision C(2025) 8493), WP Part 7 — Digital, Industry and Space (2026-2027), Topic Update 16 Feb 2026</p>
+  <p>Disclaimer: This analysis is based on publicly available EU documents. It does not constitute legal or financial advice. Always verify against official documents on the EU Funding & Tenders Portal.</p>
+  <p style="color:rgba(255,255,255,.35);">Last updated: 18 March 2026</p>
+</div>
+
+</body>
+</html>
